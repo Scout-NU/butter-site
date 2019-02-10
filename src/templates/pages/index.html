@@ -7,4 +7,14 @@
   </div>
 </section>
 
+<br>
+
+<section>
+    {% for testimonial in testimonials.items.slice(0, 3) %}
+    <li>
+      {{ testimonial.statement }} - {{ testimonial.user.firstName }} {{ testimonial.user.lastName }}
+    </li>
+  {% endfor %}
+</section>
+
 {% endblock %}

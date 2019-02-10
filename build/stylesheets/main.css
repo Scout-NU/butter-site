@@ -4,15 +4,19 @@ html {
 }
 
 body {
-  align-items: center;
   background: linear-gradient(45deg, #5539d2, #20088a);
   border-top: 5px solid #5edeb3;
   color: #fff;
   display: flex;
   font-family: monospace, sans-serif;
   height: 100%;
-  justify-content: center;
   margin: 0;
-  text-align: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 /*END - REMOVE WHEN YOU START YOUR PROJECT*/
+
+section {
+  padding: 50px;
+}
