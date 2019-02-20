@@ -1,0 +1,22 @@
+query {
+  page: getHomepage {
+    title
+    hero {
+      logo {
+        path
+      }
+    }
+  }
+  testimonials: getTestimonialList {
+	  total
+    items {
+      date
+      statement
+      user {
+        firstName
+        lastName
+      }
+
+    }
+	}
+}
