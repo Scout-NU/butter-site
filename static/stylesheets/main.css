@@ -1,22 +1,25 @@
-/*BEGIN - REMOVE WHEN YOU START YOUR PROJECT*/
-html {
-  height: 100%;
-}
-
-body {
-  background: linear-gradient(45deg, #5539d2, #20088a);
-  border-top: 5px solid #5edeb3;
-  color: #fff;
-  display: flex;
-  font-family: monospace, sans-serif;
-  height: 100%;
-  margin: 0;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
-/*END - REMOVE WHEN YOU START YOUR PROJECT*/
-
 section {
   padding: 50px;
+}
+
+#email-capture {
+  justify-content: center;
+}
+
+#email-form-header {
+  margin-left: 0.5em;
+}
+
+#email-form-group {
+  margin-left: 1em;
+}
+
+#feature-buttons {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.feature-button {
+  height: 50px;
+  width: 90%;
 }

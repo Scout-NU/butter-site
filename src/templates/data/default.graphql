@@ -1,0 +1,19 @@
+query {
+  homepage: getHomepage {
+    _id
+    hero {
+      logoImage {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+    }
+  }
+}

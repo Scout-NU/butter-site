@@ -1,22 +1,85 @@
 query {
-  page: getHomepage {
-    title
+  homepage: getHomepage {
+    _id
+    citiesSection {
+      cities {
+        _id
+        bannerImage {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+        icon {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+        name
+      }
+      citiesBlurb
+    }
+    featuresSection {
+      featureList {
+        feature {
+          blurb
+          image {
+            _id
+            caption
+            credit
+            description
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
+          title
+        }
+      }
+      sectionTitle
+    }
     hero {
-      logo {
+      heroBlurb
+      heroHeader
+      logoAltText
+      logoImage {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
         path
+        sourceUrl
+        title
+        uploadStatus
       }
     }
+    rolesSection {
+      locals {
+        localsBlurb
+        localsHeader
+      }
+      recommenders {
+        recommendersBlurb
+        recommendersHeader
+      }
+    }
+    title
   }
-  testimonials: getTestimonialList {
-	  total
-    items {
-      date
-      statement
-      user {
-        firstName
-        lastName
-      }
-
-    }
-	}
 }
