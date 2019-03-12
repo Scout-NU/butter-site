@@ -118,8 +118,21 @@
 
   <!-----Cities------->
 
-  <div class="cities section"></div>
+  <div class="cities section">
+    <div class="container">
+      <h2>Cities</h2>
+      {{ homepage.citiesSection.citiesBlurbHtml | safe }}
+      <div class="row">
+        {% for city in cities.items %}
+        <div class="col-lg-4 col-sm-12">
+          <img width="50px" src="{{ city.icon.path | image }}" />
+          <span>{{ city.name }}</span>
+        </div>
 
+        {% endfor %}
+      </div>
+    </div>
+  </div>
   <!-----Footer------->
 </div>
 {% endblock %}

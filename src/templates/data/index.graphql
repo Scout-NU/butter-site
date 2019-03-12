@@ -31,6 +31,7 @@ query {
         name
       }
       citiesBlurb
+      citiesBlurbHtml
     }
     featuresSection {
       featureList {
@@ -81,5 +82,23 @@ query {
       }
     }
     title
+  }
+  cities: getCityList {
+    total
+    items {
+      name
+      icon {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+    }
   }
 }
