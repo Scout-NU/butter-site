@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~fullpage.js/dist/fullpage.css";
+
+section {
+  padding: 50px;
+}
+
+#email-capture {
+  justify-content: center;
+}
+
+#email-form-header {
+  margin-left: 0.5em;
+}
+
+#email-form-group {
+  margin-left: 1em;
+}
+
+#feature-buttons {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.feature-button {
+  height: 50px;
+  width: 90%;
+}
+
+.footer {
+  height: 120px;
+  margin-top: 30px;
+}

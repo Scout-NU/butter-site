@@ -1,21 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
-<head>
-  <title>{{ site.settings.siteTitle }}</title>
+  <head>
+    <title>{{ site.settings.siteTitle }}</title>
 
-  <meta charset="utf-8">
+    <meta charset="utf-8" />
 
-  <link rel="stylesheet" href="/stylesheets/main.css"/>
-  <link rel="author" href="humans.txt"/>
-</head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <link rel="author" href="humans.txt" />
+  </head>
 
-<body>
+  <body
+    onload="getFeatureList('{{ homepage.featuresSection.featureList | dump }}')"
+  >
+    {% include "partials/navbar.html" %} {% block content %}{% endblock %}
 
-<div class="main">
-  {% block content %}{% endblock %}
-</div>
-
-<script src="/javascripts/main.js"></script>
-</body>
+    <script type="text/javascript" src="./dist/bundle.js"></script>
+  </body>
 </html>

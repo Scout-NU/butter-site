@@ -1,20 +1,156 @@
-{% extends "layouts/default.html" %}
+{% extends "layouts/default.html" %} {% block content %}
 
-{% block content %}
-<section>
-  <div class="hero"></div>
-    <h1>This is a blank site for the company current known as {{ page.title }}</h1>
+<div id="fullpage">
+  <!-----Hero------->
+  <div class="hero section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <h1 class="mb-5">{{ homepage.hero.heroHeader }}</h1>
+          <p id="test">{{ homepage.hero.heroBlurb }}</p>
+          <button class="btn btn-light">Get involved</button>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<br>
+  <!-----Local/Rec------->
+  <div class="roles section">
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-lg-5 col-md-9 col-sm-12">
+          <h2>{{ homepage.rolesSection.locals.localsHeader }}</h2>
+          <p>{{ homepage.rolesSection.locals.localsBlurb }}</p>
+        </div>
 
-<section>
-    {% for testimonial in testimonials.items.slice(0, 3) %}
-    <li>
-      {{ testimonial.statement }} - {{ testimonial.user.firstName }} {{ testimonial.user.lastName }}
-    </li>
-  {% endfor %}
-</section>
+        <div class="col-2"></div>
+        <div class="col-lg-5 col-md-12 col-sm-12">
+          <h2>
+            {{ homepage.rolesSection.recommenders.recommendersHeader }}
+          </h2>
+          <p>
+            {{ homepage.rolesSection.recommenders.recommendersBlurb }}
+          </p>
+        </div>
+      </div>
 
-{% endblock %}
+      <!--Email capture-->
+      <div class="row" id="email-capture">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+          <h3 id="email-form-header">Sign up for our email list!</h3>
+          <form>
+            <div class="form-group email-form-group">
+              <label>I'm interested in being:</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="localCheck"
+                />
+                <label class="form-check-label" for="recCheck">Local</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="recCheck"
+                />
+                <label class="form-check-label" for="recCheck"
+                  >Recommender</label
+                >
+              </div>
+            </div>
+            <div class="container">
+              <label for="exampleFormControlInput1">Email address</label>
+              <div class="row">
+                <div class="col-9">
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="me@example.com"
+                    />
+                  </div>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-light">Tell us!</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-----Learn more about Butter------->
+  <div class="features section">
+    <div class="container">
+      <div class="row">
+        <h2>Butter is...</h2>
+      </div>
+      <div class="row" id="feature-buttons">
+        {% for feature in homepage.featuresSection.featureList %} {% set index =
+        loop.index0 %}
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <button
+            class="btn btn-secondary feature-button"
+            onClick="changeFeature('{{ index }}')"
+          >
+            {{ feature.feature.title }}
+          </button>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <img width="200px" id="featureImage" src="#" />
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <p id="featureBlurb"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-----Cities------->
+
+  <div class="cities section">
+    <div class="container">
+      <h2>Cities</h2>
+      {{ homepage.citiesSection.citiesBlurbHtml | safe }}
+      <div class="row">
+        {% for city in cities.items %}
+        <div class="col-lg-4 col-sm-12">
+          <img width="50px" src="{{ city.icon.path | image }}" />
+          <span>{{ city.name }}</span>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-----Footer------->
+  <div class="fp-auto-height section">
+    <div class="container footer">
+      <div class="row"><h3>Butter</h3></div>
+      <div class="row">
+        <div class="container col-6">
+          <div class="row">
+            <a class="col-6" href="#">About</a>
+            <a class="col-6" href="#">Contact</a>
+          </div>
+          <div class="row">
+            <a class="col-6" href="#">FAQ</a>
+            <a class="col-6" href="#">The Spread</a>
+          </div>
+        </div>
+        <div class="container col-6"></div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
