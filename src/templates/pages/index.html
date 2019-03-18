@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12">
           <h1 class="mb-5">{{ homepage.hero.heroHeader }}</h1>
-          <p>{{ homepage.hero.heroBlurb }}</p>
+          <p id="test">{{ homepage.hero.heroBlurb }}</p>
           <button class="btn btn-light">Get involved</button>
         </div>
       </div>
@@ -98,7 +98,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <button
             class="btn btn-secondary feature-button"
-            onClick="changeFeature({{ index }})"
+            onClick="changeFeature('{{ index }}')"
           >
             {{ feature.feature.title }}
           </button>

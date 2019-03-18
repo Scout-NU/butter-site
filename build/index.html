@@ -6,78 +6,50 @@
 
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     <link rel="author" href="humans.txt" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/stylesheets/fullpage.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("#fullpage").fullpage({
-          //options here
-          licenseKey: "6F1ED004-501241ED-968D38C4-BED591B1",
-          anchors: ["hero", "roles", "features", "cities"],
-          sectionsColor: ["#fff", "#F1D5C7", "#B9C6BD", "#fff"],
-          navigation: true,
-          navigationPosition: "left",
-          navigationTooltips: ["Top", "Roles", "Features", "Cities"],
-          verticalCentered: false
-        });
-      });
-    </script>
   </head>
 
-  <body onLoad="getFeatureList()">
+  <body
+    onload="getFeatureList('[{&quot;feature&quot;:{&quot;blurb&quot;:&quot;Think of Butter like a best friend in your pocket (who also happens to be very cool). Butter recommendations are unique because each one is thoughtful, but contains all the information you would need before visiting somewhere new. Each recommendation contains need-to-knows like hours, locations, menu’s or other critical details, but also contains considerations from the recommender to give you a more in depth look. &quot;,&quot;image&quot;:{&quot;_id&quot;:&quot;04886c73-1ebb-429c-a339-ea1ebf6d086e&quot;,&quot;caption&quot;:&quot;&quot;,&quot;credit&quot;:&quot;&quot;,&quot;description&quot;:null,&quot;filename&quot;:&quot;ls.jpg&quot;,&quot;mimeType&quot;:&quot;image/jpeg&quot;,&quot;path&quot;:&quot;6fbd048e-a1f2-4cab-9f68-114df1baea34/dev/04886c73-1ebb-429c-a339-ea1ebf6d086e/ls.jpg&quot;,&quot;sourceUrl&quot;:null,&quot;title&quot;:null,&quot;uploadStatus&quot;:&quot;PENDING&quot;},&quot;title&quot;:&quot;Curated&quot;}},{&quot;feature&quot;:{&quot;blurb&quot;:&quot;Butter has a robust search feature to ensure that you can always find what you need. Whether it’s somewhere dark, quiet and elegant for a date night, or vegan friendly, full of music and near transportation for a night out, we will make sure you can find out what you care to know, all in one place.\n\nThe days of reading Google, Yelp, three blogs and the entire location tag are over. We got this. \n&quot;,&quot;image&quot;:{&quot;_id&quot;:&quot;148ad014-0d25-4566-b319-3ce5128768ff&quot;,&quot;caption&quot;:&quot;&quot;,&quot;credit&quot;:&quot;&quot;,&quot;description&quot;:null,&quot;filename&quot;:&quot;images.png&quot;,&quot;mimeType&quot;:&quot;image/png&quot;,&quot;path&quot;:&quot;6fbd048e-a1f2-4cab-9f68-114df1baea34/dev/148ad014-0d25-4566-b319-3ce5128768ff/images.png&quot;,&quot;sourceUrl&quot;:null,&quot;title&quot;:null,&quot;uploadStatus&quot;:&quot;PENDING&quot;},&quot;title&quot;:&quot;Robust&quot;}},{&quot;feature&quot;:{&quot;blurb&quot;:&quot;We personalize your recommendations to your tastes and needs. Our algorithm gets to know you through places you’ve visited and saved to bring you new suggestions and recommenders who you will love. We continuously update your homepage with new ideas to keep you exploring. &quot;,&quot;image&quot;:{&quot;_id&quot;:&quot;896c705c-1c57-4f98-bef3-6eeda89ef951&quot;,&quot;caption&quot;:&quot;&quot;,&quot;credit&quot;:&quot;&quot;,&quot;description&quot;:null,&quot;filename&quot;:&quot;AdobeStock_98569159-e1504739553260.jpg&quot;,&quot;mimeType&quot;:&quot;image/jpeg&quot;,&quot;path&quot;:&quot;6fbd048e-a1f2-4cab-9f68-114df1baea34/dev/896c705c-1c57-4f98-bef3-6eeda89ef951/AdobeStock_98569159-e1504739553260.jpg&quot;,&quot;sourceUrl&quot;:null,&quot;title&quot;:null,&quot;uploadStatus&quot;:&quot;PENDING&quot;},&quot;title&quot;:&quot;Fresh&quot;}}]')"
+  >
     <div class="main">
-      <nav
-        role="navigation"
-        class="navbar navbar-expand-md navbar-light bg-light sticky-top"
+  <nav
+    role="navigation"
+    class="navbar navbar-expand-md navbar-light bg-light fixed-top"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"
+        ><img
+          width="150px"
+          alt="Butter"
+          src="https://images.takeshape.io/6fbd048e-a1f2-4cab-9f68-114df1baea34/dev/88a71c67-15bb-4c00-aaeb-7958815f2220/Scout_Logo_1_Teal_RGB%20(1).png?auto=compress%2Cformat"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
       >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"
-            ><img
-              width="150px"
-              alt="Butter - home"
-              src="https://images.takeshape.io/6fbd048e-a1f2-4cab-9f68-114df1baea34/dev/88a71c67-15bb-4c00-aaeb-7958815f2220/Scout_Logo_1_Teal_RGB%20(1).png?auto=compress%2Cformat"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Cities</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Community</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Community</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+ 
 
 <div id="fullpage">
   <!-----Hero------->
@@ -86,7 +58,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12">
           <h1 class="mb-5">You’re a local. Start living like it. </h1>
-          <p>Butter exists to connect you with thoughtful, curated recommendations from the people who know cities best - locals. Discover the best of your own backyard, or get to know a new neighborhood, with everything you need to do it right at your fingertips. </p>
+          <p id="test">Butter exists to connect you with thoughtful, curated recommendations from the people who know cities best - locals. Discover the best of your own backyard, or get to know a new neighborhood, with everything you need to do it right at your fingertips. </p>
           <button class="btn btn-light">Get involved</button>
         </div>
       </div>
@@ -176,7 +148,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <button
             class="btn btn-secondary feature-button"
-            onClick="changeFeature(0)"
+            onClick="changeFeature('0')"
           >
             Curated
           </button>
@@ -185,7 +157,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <button
             class="btn btn-secondary feature-button"
-            onClick="changeFeature(1)"
+            onClick="changeFeature('1')"
           >
             Robust
           </button>
@@ -194,7 +166,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <button
             class="btn btn-secondary feature-button"
-            onClick="changeFeature(2)"
+            onClick="changeFeature('2')"
           >
             Fresh
           </button>
@@ -239,16 +211,7 @@
   <!-----Footer------->
 </div>
 
-    </div>
-    <script src="/javascripts/key.js"></script>
-    <script type="text/javascript" src="/javascripts/dist/bundle.js"></script>
-    <!-- <script src="/javascripts/main.js"></script> -->
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
 
-    <script type="text/javascript" src="/javascripts/fullpage.min.js"></script>
+    <script type="text/javascript" src="./dist/bundle.js"></script>
   </body>
 </html>

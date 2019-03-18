@@ -7,12 +7,11 @@
 1. Install packages with `npm install`
 1. Initialize Takeshape with `tsg init` and enter email and password that Adam gave you.
 1. Select `butter-site` project on setup
-1. Add `key.js` file to static/javascripts with content `const apiKey = "[API-KEY-HERE]";`. The API key can be obtained from the TakeShape UI, but we don't want this key to be pushed to Git.
 1. Run with `npm start`
 
 ## Build Script
 
-When the `main.js` file is edited, it must be built using `npm run buildjs`. This way, we can use ES6 syntax and the `require` keyword. No changes will appear until this build script is run.
+When the `main.js` file is edited, it must be built using `npm run webpack-build`. This way, we can use ES6 syntax, including `import` and `require` statements. Running `npm run webpack-watch` in a separate terminal window helps by automatically building for you whenever the javascript file changes.
 
 ## Editing Content
 
