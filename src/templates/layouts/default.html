@@ -13,7 +13,7 @@
   <body
     onload="getFeatureList('{{ homepage.featuresSection.featureList | dump }}')"
   >
-    {% include 'partials/navbar.html' %} {% block content %}{% endblock %}
+    {% include "partials/navbar.html" %} {% block content %}{% endblock %}
 
     <script type="text/javascript" src="./dist/bundle.js"></script>
   </body>

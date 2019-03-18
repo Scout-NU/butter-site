@@ -11,11 +11,11 @@ $(document).ready(function() {
   let fullPageInstance = new fullpage("#fullpage", {
     //options here
     licenseKey: "6F1ED004-501241ED-968D38C4-BED591B1",
-    anchors: ["hero", "roles", "features", "cities"],
-    sectionsColor: ["#fff", "#F1D5C7", "#B9C6BD", "#fff"],
+    anchors: ["hero", "roles", "features", "cities", "bottom"],
+    sectionsColor: ["#fff", "#F1D5C7", "#B9C6BD", "#fff", "#F5D4C4"],
     navigation: true,
     navigationPosition: "left",
-    navigationTooltips: ["Top", "Roles", "Features", "Cities"],
+    navigationTooltips: ["Top", "Roles", "Features", "Cities", "Bottom"],
     verticalCentered: true,
     scrollBar: true
   });
