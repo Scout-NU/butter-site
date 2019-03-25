@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12">
-          <h1 class="mb-5">{{ homepage.hero.heroHeader }}</h1>
+          <h1 class="mb-5 butter-1">{{ homepage.hero.heroHeader }}</h1>
           <p id="test">{{ homepage.hero.heroBlurb }}</p>
           <button class="btn btn-light">Get involved</button>
         </div>
@@ -135,22 +135,7 @@
   </div>
   <!-----Footer------->
   <div class="fp-auto-height section">
-    <div class="container footer">
-      <div class="row"><h3>Butter</h3></div>
-      <div class="row">
-        <div class="container col-6">
-          <div class="row">
-            <a class="col-6" href="#">About</a>
-            <a class="col-6" href="#">Contact</a>
-          </div>
-          <div class="row">
-            <a class="col-6" href="#">FAQ</a>
-            <a class="col-6" href="#">The Spread</a>
-          </div>
-        </div>
-        <div class="container col-6"></div>
-      </div>
-    </div>
+    {% include "partials/footer.html" %}
   </div>
   {% endblock %}
 </div>

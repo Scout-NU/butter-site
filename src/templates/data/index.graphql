@@ -1,35 +1,16 @@
 query {
+  navbar: getHomepage {
+    hero {
+      logoAltText
+      logoImage {
+        _id
+        path
+      }
+    }
+  }
   homepage: getHomepage {
     _id
     citiesSection {
-      cities {
-        _id
-        bannerImage {
-          _id
-          caption
-          credit
-          description
-          filename
-          mimeType
-          path
-          sourceUrl
-          title
-          uploadStatus
-        }
-        icon {
-          _id
-          caption
-          credit
-          description
-          filename
-          mimeType
-          path
-          sourceUrl
-          title
-          uploadStatus
-        }
-        name
-      }
       citiesBlurb
       citiesBlurbHtml
     }
@@ -57,19 +38,6 @@ query {
     hero {
       heroBlurb
       heroHeader
-      logoAltText
-      logoImage {
-        _id
-        caption
-        credit
-        description
-        filename
-        mimeType
-        path
-        sourceUrl
-        title
-        uploadStatus
-      }
     }
     rolesSection {
       locals {

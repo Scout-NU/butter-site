@@ -1,0 +1,120 @@
+query {
+  navbar: getHomepage {
+    hero {
+      logoAltText
+      logoImage {
+        _id
+        path
+      }
+    }
+  }
+  about: getAboutPage {
+    _id
+    contactSection {
+      contactBlurb
+      contactTitle
+    }
+    faqSection {
+      faqTitle
+      questionAndAnswer {
+        answer
+        question
+      }
+    }
+    founderSection {
+      founderBlurb
+      founderImage {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      founderTitle
+      signature {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+    }
+    headerSection {
+      headerTitle
+      headerImage {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+    }
+    teamSection {
+      teamMember {
+        _id
+        city {
+          _id
+          blogHighlight {
+            spreadTitle
+          }
+          description
+          name
+        }
+        description
+        email
+        firstName
+        lastName
+        role
+        userImage {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+      }
+      teamTitle
+    }
+    valuesSection {
+      values {
+        value {
+          valueBody
+          valueImage {
+            _id
+            caption
+            credit
+            description
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
+          valueTitle
+        }
+      }
+      valuesTitle
+    }
+  }
+}
