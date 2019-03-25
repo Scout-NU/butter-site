@@ -1,0 +1,139 @@
+{% extends "layouts/default.html" %} {% block content %}
+<div class="nav-spacer"></div>
+<div id="about-header">
+  <div
+    class="about-hero bg-image d-flex align-items-center"
+    style="background-image: url({{
+      about.headerSection.headerImage.path | image
+    }})"
+  >
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="offset-lg-2 col-lg-4 butter-h1">
+          {{ about.headerSection.headerTitle }}
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="container about-founder">
+    <div class="row">
+      <div class="col-6">
+        <p>{{ about.founderSection.founderBlurb }}</p>
+        <img
+          id="signature"
+          src="{{ about.founderSection.signature.path | image }}"
+        />
+        <p>{{ about.founderSection.founderTitle }}</p>
+      </div>
+      <div class="col-2"></div>
+      <img
+        id="founder-image"
+        src="{{ about.founderSection.founderImage.path | image }}"
+      />
+    </div>
+  </div>
+</div>
+<section id="values">
+  <div class="container">
+    <h1>{{ about.valuesSection.valuesTitle }}</h1>
+    <div class="row">
+      {% for value in about.valuesSection.values %}
+      <div class="value col-lg-6">
+        <div class="row">
+          <div class="col-6">
+            <img
+              height="150px"
+              src="{{ value.value.valueImage.path | image }}"
+            />
+          </div>
+          <div class="col-6">
+            <h3>{{ value.value.valueTitle }}</h3>
+            <p>{{ value.value.valueBody }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <h1>{{ about.teamSection.teamTitle }}</h1>
+    <div class="row">
+      {% for teamMember in about.teamSection.teamMember %}
+      <div class="value col-lg-3">
+        <img class="team-image" src="{{ teamMember.userImage.path | image }}" />
+        <p>
+          <strong>{{ teamMember.firstName }} {{ teamMember.lastName }}</strong>
+        </p>
+        <p>{{ teamMember.role }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <h1>{{ about.faqSection.faqTitle }}</h1>
+    <div class="row">
+      {% for faq in about.faqSection.questionAndAnswer %}
+      <div class="value col-lg-8 col-centered">
+        <p>
+          <strong>Q: {{ faq.question }}</strong>
+        </p>
+        <p>A: {{ faq.answer }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact-us">
+  <div class="container">
+    <h1>{{ about.contactSection.contactTitle }}</h1>
+    <p>{{ about.contactSection.contactBlurb }}</p>
+    <div class="row">
+      <div class="form-group col-lg-8 col-centered">
+        <form
+          name="contact-form"
+          method="post"
+          action="https://formspree.io/andersonian21@gmail.com"
+          method="POST"
+          class="block full-width"
+        >
+          <div class="form-group">
+            <label class="block" for="full_name">Name</label>
+            <input
+              class="form-control"
+              type="text"
+              name="full_name"
+              maxlength="50"
+            />
+          </div>
+          <div class="form-group">
+            <label class="block" for="email">Email</label>
+            <input class="form-control" type="text" name="email" />
+          </div>
+          <div class="form-group">
+            <label class="block" for="message">Your Message</label>
+            <textarea
+              class="form-control"
+              name="message"
+              maxlength="2000"
+            ></textarea>
+          </div>
+          <button class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-----Footer------->
+<div class="section">
+  {% include "partials/footer.html" %}
+</div>
+
+{% endblock %}

@@ -10,3 +10,8 @@ routes:
     path: /
     template: pages/index.html
     context: data/index.graphql
+
+  about:
+    path: /about
+    template: pages/about.html
+    context: data/about.graphql
