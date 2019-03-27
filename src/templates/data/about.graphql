@@ -1,13 +1,4 @@
 query {
-  navbar: getHomepage {
-    hero {
-      logoAltText
-      logoImage {
-        _id
-        path
-      }
-    }
-  }
   about: getAboutPage {
     _id
     contactSection {

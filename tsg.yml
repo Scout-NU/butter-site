@@ -15,3 +15,10 @@ routes:
     path: /about
     template: pages/about.html
     context: data/about.graphql
+
+  post:
+    path: /blog/:title/
+    template: pages/post.html
+    paginate:
+      data: data/post.graphql
+      itemName: post
