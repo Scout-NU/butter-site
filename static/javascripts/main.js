@@ -23,24 +23,26 @@ $(document).ready(function() {
 
 // stores feature list as global variable and updates content on page via jquery
 global.getFeatureList = function(s) {
-  // given string from nunjucks has characters that mess up JSON.parse,
-  // this removes them
-  s = s
-    .replace(/\\n/g, "\\n")
-    .replace(/\\'/g, "\\'")
-    .replace(/\\"/g, '\\"')
-    .replace(/\\&/g, "\\&")
-    .replace(/\\r/g, "\\r")
-    .replace(/\\t/g, "\\t")
-    .replace(/\\b/g, "\\b")
-    .replace(/\\f/g, "\\f");
-  s = s.replace(/[\u0000-\u0019]+/g, "");
-  let json = JSON.parse(s);
-  featureList = json;
-  const feature = featureList[0].feature;
-  const imagePath = getImageUrl(feature.image.path);
-  $("#featureBlurb").text(feature.blurb);
-  $("#featureImage").attr("src", imagePath);
+  if (s) {
+    // given string from nunjucks has characters that mess up JSON.parse,
+    // this removes them
+    s = s
+      .replace(/\\n/g, "\\n")
+      .replace(/\\'/g, "\\'")
+      .replace(/\\"/g, '\\"')
+      .replace(/\\&/g, "\\&")
+      .replace(/\\r/g, "\\r")
+      .replace(/\\t/g, "\\t")
+      .replace(/\\b/g, "\\b")
+      .replace(/\\f/g, "\\f");
+    s = s.replace(/[\u0000-\u0019]+/g, "");
+    let json = JSON.parse(s);
+    featureList = json;
+    const feature = featureList[0].feature;
+    const imagePath = getImageUrl(feature.image.path);
+    $("#featureBlurb").text(feature.blurb);
+    $("#featureImage").attr("src", imagePath);
+  }
 };
 
 // switches between feature list content via jquery
