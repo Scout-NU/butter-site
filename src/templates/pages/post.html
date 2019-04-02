@@ -1,0 +1,48 @@
+{% extends "layouts/default.html" %} {% block content %}
+
+<div class="nav-spacer"></div>
+<div
+  class="butter-hero bg-image d-flex align-items-end"
+  style="background-image: url({{ post.banner.path | image }})"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <h1 class="offset-lg-2 col-lg-4 butter-h1">
+        {{ post.title }}
+      </h1>
+    </div>
+  </div>
+</div>
+<div class="container blogpost-body">
+  <div class="row">
+    <div class="col-lg-8 col-centered my-3">
+      <p>
+        {{ post.author.firstName }} {{ post.author.lastName }} |
+        {{post.date |
+        date('MMMM Do YYYY') }}
+      </p>
+    </div>
+    <div class="col-lg-8 col-centered">
+      {{ post.contentHtml | safe }}
+    </div>
+    <div class="col-lg-8 col-centered">
+      <div class="row">
+        <div class="col-lg-1">
+          <img
+            class="circle-image author-icon"
+            src="{{ post.author.userImage.path | image }}"
+          />
+        </div>
+        <div class="col-lg-6">
+          <p class="mb-0">
+            by {{ post.author.firstName }} {{ post.author.lastName }}
+          </p>
+          <p class="mt-0 pt-0">
+            {{ post.author.firstName }} is a {{ post.author.role }} at Butter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

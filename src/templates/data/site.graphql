@@ -1,5 +1,11 @@
 query {
   settings: getSiteSettings {
     siteTitle
+    logo {
+      path
+    }
+    blogBanner {
+      path
+    }
   }
 }

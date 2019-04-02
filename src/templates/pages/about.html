@@ -2,7 +2,7 @@
 <div class="nav-spacer"></div>
 <div id="about-header">
   <div
-    class="about-hero bg-image d-flex align-items-center"
+    class="butter-hero bg-image d-flex align-items-center"
     style="background-image: url({{
       about.headerSection.headerImage.path | image
     }})"
@@ -63,7 +63,10 @@
     <div class="row">
       {% for teamMember in about.teamSection.teamMember %}
       <div class="value col-lg-3">
-        <img class="team-image" src="{{ teamMember.userImage.path | image }}" />
+        <img
+          class="team-image circle-image"
+          src="{{ teamMember.userImage.path | image }}"
+        />
         <p>
           <strong>{{ teamMember.firstName }} {{ teamMember.lastName }}</strong>
         </p>
