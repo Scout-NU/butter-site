@@ -1,0 +1,187 @@
+{% extends "layouts/default.html" %} {% block content %}
+
+
+    <!-------Nashville Header--------->
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                   <img class="city-header-img" src= "{{
+                    city.cityHeader.bannerImage.path | image
+                  }}">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-12 mb-5 butter-h1">
+                            <h1>{{city.name}}</h1>
+                        </div>
+                        <div class="col-12">
+                            <p>{{city.cityHeader.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------Review Hits--------->
+    <div class="section container">
+        <div class="row">
+            <h2>{{city.reviewSection.reviewSectionTitle}}</h2>
+        </div>
+        <div class="row">
+            {% for review in city.reviewSection.reviews %}
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="row">
+                    <img src="{{ review.image.path | image }}">
+                </div>
+                <div class="row">
+                    <h3>{{review.title}}</h3>
+                </div>
+                <div class="row">
+                    {% for tag in tag %}
+                    <p>{{tag.tagName}}</p>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <p>{{review.statement}}</p>
+                </div>
+                <div class="row">
+                    <p>{{review.user.firstName}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-------Email Capture--------->
+    <div class="section container">
+            <div class="row" id="email-capture">
+                    <div class="col-lg-6 col-md-8 col-sm-12">
+                      <h3 id="email-form-header">Sign up for our email list!</h3>
+                      <form>
+                        <div class="form-group email-form-group">
+                          <label>I'm interested in being:</label>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="localCheck"
+                            />
+                            <label class="form-check-label" for="recCheck">Local</label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="recCheck"
+                            />
+                            <label class="form-check-label" for="recCheck"
+                              >Recommender</label
+                            >
+                          </div>
+                        </div>
+                        <div class="container">
+                          <label for="exampleFormControlInput1">Email address</label>
+                          <div class="row">
+                            <div class="col-9">
+                              <div class="form-group">
+                                <input
+                                  type="email"
+                                  class="form-control"
+                                  id="exampleFormControlInput1"
+                                  placeholder="me@example.com"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-3">
+                              <button class="btn btn-light">Tell us!</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+          </div>
+    </div>
+
+    <!-------Neighborhoods--------->
+    <div class="section container">
+      <div class="row">
+        <h2>{{city.neighborhoodSection.neighborhoodSectionTitle}}</h2>
+      </div>
+      <div class="row">
+        {% for neighborhood in city.neighborhoodSection.neighborhoods %}
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="row">
+              <img class="neighborhood-img" src= "{{
+                neighborhood.neighborhoodPhoto.path | image
+              }}">
+          </div>
+          <div class="row">
+              <h3>{{neighborhood.neighborhoodTitle}}</h3>
+          </div>
+          <div class="row">
+              <p>{{neighborhood.neighborhoodBody}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+    <!-------The Spread--------->
+
+    <div class="section container">
+      <div class="row">
+        <h2>{{city.blogHighlight.spreadTitle}}</h2>
+      </div>
+      <div class="row">
+          <p class="headers">A Blog by Butter</p>
+      </div>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              {% for post in city.blogHighlight.posts %}
+              <div class="container">
+                <div class="row">
+                    <img src="{{
+                      post.banner.path | image
+                    }}" alt="Los Angeles">
+                </div>
+                <div class="row">
+                  <h3>{{post.title}}</h3>
+                </div>
+                <div class="row">
+                  <p>{{post.shortDescription}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+    
+
+    <!-------Instagram--------->
+    <div class="fp-auto-height section">
+        {% include "partials/footer.html" %}
+     </div>
+{% endblock %}
+

@@ -15,6 +15,13 @@ routes:
     path: /about
     template: pages/about.html
     context: data/about.graphql
+    
+  cities:
+    path: /cities/:name/
+    template: pages/city.html
+    paginate: 
+      data: data/cities.graphql
+      itemName: city
 
   post:
     path: /blog/:title/
@@ -26,3 +33,4 @@ routes:
       template: pages/blog.html
       data: data/post.graphql
       itemName: post
+
