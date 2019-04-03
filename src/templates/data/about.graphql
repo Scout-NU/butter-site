@@ -67,14 +67,6 @@ query {
     teamSection {
       teamMember {
         _id
-        city {
-          _id
-          blogHighlight {
-            spreadTitle
-          }
-          description
-          name
-        }
         description
         email
         firstName

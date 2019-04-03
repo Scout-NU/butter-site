@@ -1,0 +1,135 @@
+query{
+  city: getCityList {
+    total
+    items {
+      _id
+    blogHighlight {
+      posts {
+        _id
+        author {
+          _id
+          description
+          email
+          firstName
+          lastName
+          role
+        }
+        banner {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+        content
+        date
+        shortDescription
+        thumbnail {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+        title
+      }
+      spreadTitle
+    }
+    cityHeader {
+      bannerImage {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      description
+    }
+    icon {
+      _id
+      caption
+      credit
+      description
+      filename
+      mimeType
+      path
+      sourceUrl
+      title
+      uploadStatus
+    }
+    name
+    neighborhoodSection {
+      neighborhoods {
+        neighborhoodBody
+        neighborhoodPhoto {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+        neighborhoodTitle
+      }
+      neighborhoodSectionTitle
+    }
+    reviewSection {
+      reviews {
+        _id
+        image {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+        statement
+        tag {
+          ... on Location {
+            _id
+            Location_name: name
+          }
+          ... on Tags {
+            _id
+            Tags_tagName: tagName
+          }
+        }
+        title
+        user {
+          _id
+          description
+          email
+          firstName
+          lastName
+          role
+        }
+      }
+      reviewSectionTitle
+    }
+    }
+  }
+}
