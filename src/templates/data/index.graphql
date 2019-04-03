@@ -1,13 +1,4 @@
 query {
-  navbar: getHomepage {
-    hero {
-      logoAltText
-      logoImage {
-        _id
-        path
-      }
-    }
-  }
   homepage: getHomepage {
     _id
     citiesSection {

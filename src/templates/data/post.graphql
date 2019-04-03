@@ -1,0 +1,65 @@
+query {
+  posts: getBlogPostList {
+    total
+    items {
+      _id
+      author {
+        _id
+        city {
+          _id
+          blogHighlight {
+            spreadTitle
+          }
+          description
+          name
+        }
+        description
+        email
+        firstName
+        lastName
+        role
+        userImage {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+      }
+      banner {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      content
+      contentHtml
+      date
+      shortDescription
+      thumbnail {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      title
+    }
+  }
+}
