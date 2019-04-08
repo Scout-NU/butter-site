@@ -45,7 +45,7 @@ query {
   cities: getCityList {
     total
     items {
-      name
+      cityName
       icon {
         _id
         caption
