@@ -1,26 +1,26 @@
 {% extends "layouts/default.html" %} {% block content %}
 
-<div class="nav-spacer"></div>
+<div class="container nav-spacer"></div>
 
-    <!-------Nashville Header--------->
-    <div
-  class="city-hero d-flex align-items-center"
-  style="background-image: url({{ city.cityHeader.bannerImage.path | image }})"
->
-  <div class="container">
+    <!------- Header--------->
+  <div class="container d-flex align-items-center">
       <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12"></div>
+          <div class="col-lg-6 col-md-6 col-sm-12"
+          style="background-image: url({{ city.cityHeader.bannerImage.path | image }})">
+        </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="row">
                 <h1>{{city.cityName}}</h1>
               </div>
               <div class="row">
-               <h4>{{city.cityHeader.description}}</h4>
+               <h4>{{city.cityHeader.tagline}}</h4>
+              </div>
+              <div class="row">
+                <p>{{city.cityHeader.description}}</p>
               </div>
             </div>
         </div>
   </div>
-</div>
     <!-------Review Hits--------->
     <div class="section">
         <div class="row city-titles">
@@ -44,7 +44,7 @@
                     <p>{{review.statement}}</p>
                 </div>
                 <div class="row">
-                    <p>{{review.user.firstName}}</p>
+                    <p>{{review.user.firstName}}, {{review.user.role}}</p>
                 </div>
             </div>
             {% endfor %}
@@ -137,49 +137,26 @@
         <div class="row">
           <h5>A Blog by Butter</h5>
         </div>
-      </div>
-     
-      <div class="container">
-          <div id="myCarousel" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"
-            onclick="$('#myCarousel').carousel('prev')">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"
-              onclick="$('#myCarousel').carousel('prev')">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-        
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                    {% for blogPhoto in city.blogHighlight.posts.slice(0,3) %}
-                  <div class="col-4">
-                      <img class="d-block w-100" src="{{
-                        blogPhoto.banner.path | image
-                      }}" alt="Los Angeles" style="width:100%;">
-                  </div>
-                  {% endfor %}
-                </div>
+        <div class="row">
+          {% for post in city.blogHighlight.posts%}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="row">
+                  <img class="neighborhood-img" src= "{{
+                    post.banner.path | image}}">
               </div>
-      
-              <div class="carousel-item">
-                  <div class="row">
-                      {% for blogPhoto in city.blogHighlight.posts.slice(3,6) %}
-                      <div class="col-4">
-                          <img class="d-block w-100" src="{{
-                            blogPhoto.banner.path | image
-                          }}" alt="Los Angeles" style="width:100%;">
-                      </div>
-                      {% endfor %}
-                    </div>
+              <div class="row">
+                <h3>{{post.title}}</h3>
               </div>
+              <div class="row">
+                <p>{{post.shortDescription}}</p>
+              </div>
+          </div>
+          {% endfor %}
         </div>
+        <div class="row">
+          <button class="btn btn-dark">See More Posts<a href="/blog"></a></button>
+        </div>
+      </div>
     </div>
     
 

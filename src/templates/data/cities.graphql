@@ -59,6 +59,7 @@ query{
         uploadStatus
       }
       description
+      tagline
     }
     icon {
       _id
