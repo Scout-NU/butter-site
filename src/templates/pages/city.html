@@ -26,25 +26,18 @@
         <div class="row city-titles">
             <h2>{{city.reviewSection.reviewSectionTitle}}</h2>
         </div>
-        <div class="row no-gutters" id="review-posts">
+        <div class="row">
             {% for review in city.reviewSection.reviews %}
-            <div class="col-lg-2 col-md-6 col-sm-12" id="review">
-                <div class="row">
-                    <img src="{{ review.image.path | image }}"
-                    alt="{{ review.image.description }}">
-                </div>
-                <div class="row">
+            <div class="col-xl-3 col-lg-3 col-sm-6 col-xs-12 width-fix">
+                <div class="row review-size">
+                      <img class="thumbnails"
+                      src="{{ review.image.path | image }}"
+                      alt="{{ review.image.description }}">
                     <h3>{{review.title}}</h3>
-                </div>
-                <div class="row">
                     {% for tag in tag %}
                     <p>{{tag.tagName}}</p>
                     {% endfor %}
-                </div>
-                <div class="row">
                     <p>{{review.statement}}</p>
-                </div>
-                <div class="row">
                     <p>{{review.user.firstName}}, {{review.user.role}}</p>
                 </div>
             </div>
@@ -100,6 +93,7 @@
                           </div>
                         </div>
                     </form>
+          </div>
           </div>
     </div>
 
@@ -162,8 +156,11 @@
     
 
     <!-------Instagram--------->
-    <div class="fp-auto-height section">
+
+    <!------Footer------>
+    <div class="section">
         {% include "partials/footer.html" %}
       </div>
+    
 {% endblock %}
 
