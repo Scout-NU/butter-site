@@ -2,29 +2,124 @@
 
 <div class="container nav-spacer"></div>
 
-    <!------- Header--------->
-  <div class="container-fluid d-flex align-items-center" role="banner">
+<!------- Header--------->
+<div class="container-fluid d-flex align-items-center" role="banner">
+  <div class="row">
+    <div
+      class="col-lg-6 col-md-6 col-sm-12"
+      style="background-image: url({{
+        city.cityHeader.bannerImage.path | image
+      }})"
+    ></div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12"
-          style="background-image: url({{ city.cityHeader.bannerImage.path | image }})">
+        <h1 class="butter-h1">{{ city.cityName }}</h1>
+      </div>
+      <div class="row">
+        <h4>{{ city.cityHeader.tagline }}</h4>
+      </div>
+      <div class="row">
+        <p>{{ city.cityHeader.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------Review Hits--------->
+<section class="section">
+  <div class="row city-titles">
+    <h2>{{ city.reviewSection.reviewSectionTitle }}</h2>
+  </div>
+  <div class="row no-gutters" id="review-posts">
+    {% for review in city.reviewSection.reviews %}
+    <div class="col-lg-2 col-md-6 col-sm-12" id="review">
+      <div class="row">
+        <img
+          src="{{ review.image.path | image }}"
+          alt="{{ review.image.description }}"
+        />
+      </div>
+      <div class="row">
+        <h3>{{ review.title }}</h3>
+      </div>
+      <div class="row">
+        {% for tag in tag %}
+        <p>{{ tag.tagName }}</p>
+        {% endfor %}
+      </div>
+      <div class="row">
+        <p>{{ review.statement }}</p>
+      </div>
+      <div class="row">
+        <p>{{ review.user.firstName }}, {{ review.user.role }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-------Email Capture--------->
+<div class="section container" role="form">
+  <div class="row" id="email-capture">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <h3 id="email-form-header">Sign up for our email list!</h3>
+      <form>
+        <div class="form-group email-form-group">
+          <label>I'm interested in being:</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="localCheck"
+            />
+            <label class="form-check-label" for="recCheck">Local</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="recCheck"
+            />
+            <label class="form-check-label" for="recCheck">Recommender</label>
+          </div>
         </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="row">
-                <h1>{{city.cityName}}</h1>
-              </div>
-              <div class="row">
-               <h4>{{city.cityHeader.tagline}}</h4>
-              </div>
-              <div class="row">
-                <p>{{city.cityHeader.description}}</p>
+        <div class="container">
+          <label for="exampleFormControlInput1">Email address</label>
+          <div class="row">
+            <div class="col-9">
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="me@example.com"
+                />
               </div>
             </div>
+            <div class="col-3">
+              <button class="btn btn-light">Tell us!</button>
+            </div>
+          </div>
         </div>
+      </form>
+    </div>
   </div>
-    <!-------Review Hits--------->
-    <section class="section">
-        <div class="row city-titles">
-            <h2>{{city.reviewSection.reviewSectionTitle}}</h2>
+</div>
+
+  <!-------Neighborhoods--------->
+  <section class="section">
+    <div class="row city-titles no-gutters">
+      <h2>{{ city.neighborhoodSection.neighborhoodSectionTitle }}</h2>
+    </div>
+    <div class="row no-gutters" id="neighborhood-posts">
+      {% for neighborhood in city.neighborhoodSection.neighborhoods %}
+      <div class="col-lg-3 col-md-4 col-sm-12 col-centered" id="neighborhoods">
+        <div class="row">
+          <img
+            class="neighborhood-img"
+            src="{{ neighborhood.neighborhoodPhoto.path | image }}"
+          />
         </div>
         <div class="row">
             {% for review in city.reviewSection.reviews %}
@@ -96,31 +191,37 @@
           </div>
           </div>
     </div>
+  </section>
 
-    <!-------Neighborhoods--------->
-    <section class="section">
-      <div class="row city-titles no-gutters">
-        <h2>{{city.neighborhoodSection.neighborhoodSectionTitle}}</h2>
+  <!-------The Spread--------->
+
+  <section class="section container">
+    <div class="city-titles">
+      <div class="row">
+        <h2>{{ city.blogHighlight.spreadTitle }}</h2>
       </div>
-      <div class="row no-gutters" id="neighborhood-posts">
-        {% for neighborhood in city.neighborhoodSection.neighborhoods %}
-        <div class="col-lg-3 col-md-4 col-sm-12 col-centered" id="neighborhoods">
+      <div class="row">
+        <h5>A Blog by Butter</h5>
+      </div>
+      <div class="row">
+        {% for post in city.blogHighlight.posts%}
+        <div class="col-lg-6 col-md-6 col-sm-12">
           <div class="row">
-              <img class="neighborhood-img" src= "{{
-                neighborhood.neighborhoodPhoto.path | image
-              }}">
+            <img
+              class="neighborhood-img"
+              src="{{ post.banner.path | image }}"
+            />
           </div>
           <div class="row">
-              <h3>{{neighborhood.neighborhoodTitle}}</h3>
+            <h3>{{ post.title }}</h3>
           </div>
           <div class="row">
-              <p>{{neighborhood.neighborhoodBody}}</p>
+            <p>{{ post.shortDescription }}</p>
           </div>
         </div>
         {% endfor %}
       </div>
     </section>
-
 
     <!-------The Spread--------->
 

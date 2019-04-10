@@ -2,33 +2,37 @@
 
 <div id="fullpage">
   <!-----Hero------->
-  <div class="hero section" role="banner">
+  <div class="section" id="section0" role="banner">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12">
-          <h1 class="mb-5 butter-1">{{ homepage.hero.heroHeader }}</h1>
-          <p id="test">{{ homepage.hero.heroBlurb }}</p>
-          <button class="btn btn-light">Get involved</button>
+          <h1 class="mb-5 butter-h1">{{ homepage.hero.heroHeader }}</h1>
+          <p class="butter-p">{{ homepage.hero.heroBlurb }}</p>
+          <button href="#features" class="butter-btn-light mt-3">
+            Get involved
+          </button>
         </div>
       </div>
     </div>
   </div>
 
   <!-----Local/Rec------->
-  <div class="roles section" role="region">
+  <div class="section" id="section1" role="region">
     <div class="container">
       <div class="row py-3">
         <div class="col-lg-5 col-md-9 col-sm-12">
-          <h2>{{ homepage.rolesSection.locals.localsHeader }}</h2>
-          <p>{{ homepage.rolesSection.locals.localsBlurb }}</p>
+          <h2 class="butter-h2">
+            {{ homepage.rolesSection.locals.localsHeader }}
+          </h2>
+          <p class="butter-p">{{ homepage.rolesSection.locals.localsBlurb }}</p>
         </div>
 
         <div class="col-2"></div>
         <div class="col-lg-5 col-md-12 col-sm-12">
-          <h2>
+          <h2 class="butter-h2">
             {{ homepage.rolesSection.recommenders.recommendersHeader }}
           </h2>
-          <p>
+          <p class="butter-p">
             {{ homepage.rolesSection.recommenders.recommendersBlurb }}
           </p>
         </div>
@@ -87,17 +91,20 @@
   </div>
 
   <!-----Learn more about Butter------->
-  <div class="features section" role="region">
+  <div class="section" id="section2" role="region">
     <div class="container">
       <div class="row">
-        <h2>Butter is...</h2>
+        <h2 class="butter-h2 text-white">
+          {{ homepage.featuresSection.sectionTitle }}
+        </h2>
       </div>
       <div class="row" id="feature-buttons">
         {% for feature in homepage.featuresSection.featureList %} {% set index =
         loop.index0 %}
-        <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="col-lg-4 col-md-4 col-sm-12">
           <button
-            class="btn btn-secondary feature-button"
+            id="feature-button{{ index }}"
+            class="butter-btn-transparent feature-button"
             onClick="changeFeature('{{ index }}')"
           >
             {{ feature.feature.title }}
@@ -106,11 +113,13 @@
         {% endfor %}
       </div>
       <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <img width="200px" id="featureImage" src="#" />
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-5">
+          <div class="feature-image-blob">
+            <img class="feature-image" id="featureImage" src="#" />
+          </div>
         </div>
-        <div class="col-lg-8 col-md-6 col-sm-12">
-          <p id="featureBlurb"></p>
+        <div class="col-lg-4 col-md-5 col-sm-12 mt-5">
+          <p class="butter-p text-white" id="featureBlurb"></p>
         </div>
       </div>
     </div>
@@ -118,16 +127,19 @@
 
   <!-----Cities------->
 
-  <div class="cities section" role="region">
+  <div class="section" id="section3" role="region">
     <div class="container">
-      <h2>Cities</h2>
+      <h2 class="butter-h2 text-charcoal">Cities</h2>
       {{ homepage.citiesSection.citiesBlurbHtml | safe }}
       <div class="row">
         {% for city in cities.items %}
         <div class="col-lg-4 col-sm-12">
-          <img width="50px" src="{{ city.icon.path | image }}" 
-          alt="{{ city.icon.description}}"/>
-          <span>{{ city.name }}</span>
+          <img
+            class="city-icon"
+            src="{{ city.icon.path | image }}"
+            alt="{{ city.icon.description }}"
+          />
+          <span class="butter-h2">{{ city.cityName }}</span>
         </div>
 
         {% endfor %}
@@ -135,7 +147,7 @@
     </div>
   </div>
   <!-----Footer------->
-  <div class="fp-auto-height section">
+  <div class="fp-auto-height section" id="section4">
     {% include "partials/footer.html" %}
   </div>
   {% endblock %}
