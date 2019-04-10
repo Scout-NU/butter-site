@@ -1,4 +1,5 @@
 let featureList;
+let currentFeature;
 let tr = require("takeshape-routing");
 let getImageUrl = tr.getImageUrl;
 import css from "../stylesheets/main.scss";
@@ -12,12 +13,11 @@ $(document).ready(function() {
     //options here
     licenseKey: "6F1ED004-501241ED-968D38C4-BED591B1",
     anchors: ["hero", "roles", "features", "cities", "bottom"],
-    sectionsColor: ["#fff", "#F1D5C7", "#B9C6BD", "#fff", "#F5D4C4"],
+    sectionsColor: ["#fff", "#F1D5C7", "#925842", "#fff", "#F5D4C4"],
     navigation: true,
     navigationPosition: "left",
     navigationTooltips: ["Top", "Roles", "Features", "Cities", "Bottom"],
-    verticalCentered: true,
-    scrollBar: true
+    verticalCentered: true
   });
 });
 
@@ -40,8 +40,14 @@ global.getFeatureList = function(s) {
     featureList = json;
     const feature = featureList[0].feature;
     const imagePath = getImageUrl(feature.image.path);
+    const imageAlt = feature.image.description;
     $("#featureBlurb").text(feature.blurb);
     $("#featureImage").attr("src", imagePath);
+    $("#featureImage").attr("alt", imageAlt);
+    currentFeature = 0;
+    $("#feature-button" + currentFeature)
+      .removeClass("butter-btn-transparent")
+      .addClass("butter-btn-light");
   }
 };
 
@@ -49,6 +55,15 @@ global.getFeatureList = function(s) {
 global.changeFeature = function(num) {
   const feature = featureList[num].feature;
   const imagePath = getImageUrl(feature.image.path);
+  const imageAlt = feature.image.description;
   $("#featureBlurb").text(feature.blurb);
   $("#featureImage").attr("src", imagePath);
+  $("#featureImage").attr("alt", imageAlt);
+  $("#feature-button" + num)
+    .removeClass("butter-btn-transparent")
+    .addClass("butter-btn-light");
+  $("#feature-button" + currentFeature)
+    .removeClass("butter-btn-light")
+    .addClass("butter-btn-transparent");
+  currentFeature = num;
 };
