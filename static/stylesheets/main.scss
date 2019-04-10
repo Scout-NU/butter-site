@@ -6,6 +6,11 @@ $cocoa: #925842;
 $charcoal: #4a4a4a;
 $light-peach: #f2d5c7;
 
+/* media breakpoints */
+$break-mobile: 320px;
+$break-tablet: 768px;
+$break-desktop: 960px;
+
 section {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -223,6 +228,25 @@ section {
 
 #neighborhood-posts {
   margin-left: -2em;
+}
+
+.review-size {
+  margin-left: 42px;
+  @media screen and (max-width: $break-mobile) {
+    min-width: 273px;
+  }
+  @media screen and (min-width: $break-tablet) {
+    min-width: 289px;
+  }
+  @media screen and (min-width: $break-desktop) {
+    min-width: 180px;
+    max-width: 230px;
+  }
+}
+
+.thumbnails {
+  width: 100%;
+  object-fit: fill;
 }
 
 /* Pagination */
