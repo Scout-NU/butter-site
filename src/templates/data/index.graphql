@@ -11,15 +11,8 @@ query {
           blurb
           image {
             _id
-            caption
-            credit
             description
-            filename
-            mimeType
             path
-            sourceUrl
-            title
-            uploadStatus
           }
           title
         }
@@ -48,15 +41,8 @@ query {
       cityName
       icon {
         _id
-        caption
-        credit
         description
-        filename
-        mimeType
         path
-        sourceUrl
-        title
-        uploadStatus
       }
     }
   }

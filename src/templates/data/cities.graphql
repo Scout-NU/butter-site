@@ -6,41 +6,12 @@ query{
     blogHighlight {
       posts {
         _id
-        author {
-          _id
-          description
-          email
-          firstName
-          lastName
-          role
-        }
         banner {
           _id
-          caption
-          credit
           description
-          filename
-          mimeType
           path
-          sourceUrl
-          title
-          uploadStatus
         }
-        content
-        date
         shortDescription
-        thumbnail {
-          _id
-          caption
-          credit
-          description
-          filename
-          mimeType
-          path
-          sourceUrl
-          title
-          uploadStatus
-        }
         title
       }
       spreadTitle
@@ -48,30 +19,11 @@ query{
     cityHeader {
       bannerImage {
         _id
-        caption
-        credit
         description
-        filename
-        mimeType
         path
-        sourceUrl
-        title
-        uploadStatus
       }
       description
       tagline
-    }
-    icon {
-      _id
-      caption
-      credit
-      description
-      filename
-      mimeType
-      path
-      sourceUrl
-      title
-      uploadStatus
     }
     cityName
     neighborhoodSection {
@@ -79,15 +31,8 @@ query{
         neighborhoodBody
         neighborhoodPhoto {
           _id
-          caption
-          credit
           description
-          filename
-          mimeType
           path
-          sourceUrl
-          title
-          uploadStatus
         }
         neighborhoodTitle
       }
@@ -98,15 +43,8 @@ query{
         _id
         image {
           _id
-          caption
-          credit
           description
-          filename
-          mimeType
           path
-          sourceUrl
-          title
-          uploadStatus
         }
         statement
         tag {
@@ -122,10 +60,7 @@ query{
         title
         user {
           _id
-          description
-          email
           firstName
-          lastName
           role
         }
       }

@@ -1,6 +1,8 @@
 {% extends "layouts/default.html" %} {% block content %}
 <div class="nav-spacer"></div>
-<div id="about-header">
+
+<!-----Header------>
+<div id="about-header" role="banner">
   <div
     class="butter-hero bg-image d-flex align-items-center"
     style="background-image: url({{
@@ -15,13 +17,16 @@
       </div>
     </div>
   </div>
-  <div class="container about-founder">
+
+  <!----About the Founder---->
+  <div class="container about-founder" role="region">
     <div class="row">
       <div class="col-6">
         <p>{{ about.founderSection.founderBlurb }}</p>
         <img
           id="signature"
           src="{{ about.founderSection.signature.path | image }}"
+          alt="{{about.founderSection.signature.description}}"
         />
         <p>{{ about.founderSection.founderTitle }}</p>
       </div>
@@ -29,10 +34,13 @@
       <img
         id="founder-image"
         src="{{ about.founderSection.founderImage.path | image }}"
+        alt="{{about.founderSection.founderImage.description}}"
       />
     </div>
   </div>
 </div>
+
+<!----Values---->
 <section id="values">
   <div class="container">
     <h1>{{ about.valuesSection.valuesTitle }}</h1>
@@ -44,6 +52,7 @@
             <img
               height="150px"
               src="{{ value.value.valueImage.path | image }}"
+              alt="{{ value.value.valueImage.description}}"
             />
           </div>
           <div class="col-6">
@@ -57,6 +66,7 @@
   </div>
 </section>
 
+<!-----About the Team----->
 <section id="team">
   <div class="container">
     <h1>{{ about.teamSection.teamTitle }}</h1>
@@ -66,6 +76,7 @@
         <img
           class="team-image circle-image"
           src="{{ teamMember.userImage.path | image }}"
+          alt="{{ teamMember.userImage.description}}"
         />
         <p>
           <strong>{{ teamMember.firstName }} {{ teamMember.lastName }}</strong>
@@ -76,6 +87,8 @@
     </div>
   </div>
 </section>
+
+<!------FAQ------>
 
 <section id="faq">
   <div class="container">
@@ -93,6 +106,7 @@
   </div>
 </section>
 
+<!-----Contact----->
 <section id="contact-us">
   <div class="container">
     <h1>{{ about.contactSection.contactTitle }}</h1>

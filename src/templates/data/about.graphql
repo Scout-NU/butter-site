@@ -16,43 +16,22 @@ query {
       founderBlurb
       founderImage {
         _id
-        caption
-        credit
         description
-        filename
-        mimeType
         path
-        sourceUrl
-        title
-        uploadStatus
       }
       founderTitle
       signature {
         _id
-        caption
-        credit
         description
-        filename
-        mimeType
         path
-        sourceUrl
-        title
-        uploadStatus
       }
     }
     headerSection {
       headerTitle
       headerImage {
         _id
-        caption
-        credit
         description
-        filename
-        mimeType
         path
-        sourceUrl
-        title
-        uploadStatus
       }
     }
     teamSection {
@@ -65,15 +44,8 @@ query {
         role
         userImage {
           _id
-          caption
-          credit
           description
-          filename
-          mimeType
           path
-          sourceUrl
-          title
-          uploadStatus
         }
       }
       teamTitle
@@ -84,15 +56,8 @@ query {
           valueBody
           valueImage {
             _id
-            caption
-            credit
             description
-            filename
-            mimeType
             path
-            sourceUrl
-            title
-            uploadStatus
           }
           valueTitle
         }
