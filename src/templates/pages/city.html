@@ -33,7 +33,7 @@
                       <img class="thumbnails"
                       src="{{ review.image.path | image }}"
                       alt="{{ review.image.description }}">
-                    <h3>{{review.title}}</h3>
+                    <h3 class="mt-2">{{review.title}}</h3>
                     {% for tag in tag %}
                     <p>{{tag.tagName}}</p>
                     {% endfor %}
@@ -161,6 +161,7 @@
     <div class="section">
         {% include "partials/footer.html" %}
       </div>
-    
+ <script type="text/javascript" src="../../dist/bundle.js"></script>
 {% endblock %}
+
 
