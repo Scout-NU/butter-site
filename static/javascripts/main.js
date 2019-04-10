@@ -47,7 +47,7 @@ global.getFeatureList = function(s) {
     currentFeature = 0;
     $("#feature-button" + currentFeature)
       .removeClass("butter-btn-transparent")
-      .addClass("butter-btn-light");
+      .addClass("feature-btn-light");
   }
 };
 
@@ -62,9 +62,9 @@ global.changeFeature = function(num) {
   if (num != currentFeature) {
     $("#feature-button" + num)
       .removeClass("butter-btn-transparent")
-      .addClass("butter-btn-light");
+      .addClass("feature-btn-light");
     $("#feature-button" + currentFeature)
-      .removeClass("butter-btn-light")
+      .removeClass("feature-btn-light")
       .addClass("butter-btn-transparent");
   }
   currentFeature = num;
@@ -72,8 +72,7 @@ global.changeFeature = function(num) {
 
 //resize review images to be half of width
 var img = document.getElementsByClassName("thumbnails");
-const wdith = $('.thumbnails img').width();
-$('.thumbnails img').height(width / 2);
+const wdith = $(".thumbnails img").width();
+$(".thumbnails img").height(width / 2);
 
-
-console.log("hi")
+console.log("hi");

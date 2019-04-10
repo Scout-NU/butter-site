@@ -107,162 +107,108 @@
   </div>
 </div>
 
-  <!-------Neighborhoods--------->
-  <section class="section">
-    <div class="row city-titles no-gutters">
-      <h2>{{ city.neighborhoodSection.neighborhoodSectionTitle }}</h2>
+<!-------Neighborhoods--------->
+<section class="section">
+  <div class="row city-titles no-gutters">
+    <h2>{{ city.neighborhoodSection.neighborhoodSectionTitle }}</h2>
+  </div>
+  <div class="row no-gutters" id="neighborhood-posts">
+    {% for neighborhood in city.neighborhoodSection.neighborhoods %}
+    <div class="col-lg-3 col-md-4 col-sm-12 col-centered" id="neighborhoods">
+      <div class="row">
+        <img
+          class="neighborhood-img"
+          src="{{ neighborhood.neighborhoodPhoto.path | image }}"
+        />
+      </div>
     </div>
-    <div class="row no-gutters" id="neighborhood-posts">
-      {% for neighborhood in city.neighborhoodSection.neighborhoods %}
-      <div class="col-lg-3 col-md-4 col-sm-12 col-centered" id="neighborhoods">
-        <div class="row">
+    <div class="row">
+      {% for review in city.reviewSection.reviews %}
+      <div class="col-xl-3 col-lg-3 col-sm-6 col-xs-12 width-fix">
+        <div class="row review-size">
           <img
-            class="neighborhood-img"
-            src="{{ neighborhood.neighborhoodPhoto.path | image }}"
+            class="thumbnails"
+            src="{{ review.image.path | image }}"
+            alt="{{ review.image.description }}"
           />
-        </div>
-        <div class="row">
-            {% for review in city.reviewSection.reviews %}
-            <div class="col-xl-3 col-lg-3 col-sm-6 col-xs-12 width-fix">
-                <div class="row review-size">
-                      <img class="thumbnails"
-                      src="{{ review.image.path | image }}"
-                      alt="{{ review.image.description }}">
-                    <h3 class="mt-2">{{review.title}}</h3>
-                    {% for tag in tag %}
-                    <p>{{tag.tagName}}</p>
-                    {% endfor %}
-                    <p>{{review.statement}}</p>
-                    <p>{{review.user.firstName}}, {{review.user.role}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-      </section>
-
-    <!-------Email Capture--------->
-    <div class="section container" role="form">
-            <div class="row" id="email-capture">
-                    <div class="col-lg-6 col-md-8 col-sm-12">
-                      <h3 id="email-form-header">Sign up for our email list!</h3>
-                      <form>
-                        <div class="form-group email-form-group">
-                          <label>I'm interested in being:</label>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="localCheck"
-                            />
-                            <label class="form-check-label" for="recCheck">Local</label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="recCheck"
-                            />
-                            <label class="form-check-label" for="recCheck"
-                              >Recommender</label
-                            >
-                          </div>
-                        </div>
-                        <div class="container">
-                          <label for="exampleFormControlInput1">Email address</label>
-                          <div class="row">
-                            <div class="col-9">
-                              <div class="form-group">
-                                <input
-                                  type="email"
-                                  class="form-control"
-                                  id="exampleFormControlInput1"
-                                  placeholder="me@example.com"
-                                />
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <button class="btn btn-light">Tell us!</button>
-                            </div>
-                          </div>
-                        </div>
-                    </form>
-          </div>
-          </div>
-    </div>
-  </section>
-
-  <!-------The Spread--------->
-
-  <section class="section container">
-    <div class="city-titles">
-      <div class="row">
-        <h2>{{ city.blogHighlight.spreadTitle }}</h2>
-      </div>
-      <div class="row">
-        <h5>A Blog by Butter</h5>
-      </div>
-      <div class="row">
-        {% for post in city.blogHighlight.posts%}
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div class="row">
-            <img
-              class="neighborhood-img"
-              src="{{ post.banner.path | image }}"
-            />
-          </div>
-          <div class="row">
-            <h3>{{ post.title }}</h3>
-          </div>
-          <div class="row">
-            <p>{{ post.shortDescription }}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-
-    <!-------The Spread--------->
-
-    <section class="section container">
-      <div class="city-titles">
-        <div class="row">
-            <h2>{{city.blogHighlight.spreadTitle}}</h2>
-        </div>
-        <div class="row">
-          <h5>A Blog by Butter</h5>
-        </div>
-        <div class="row">
-          {% for post in city.blogHighlight.posts%}
-          <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="row">
-                  <img class="neighborhood-img" src= "{{
-                    post.banner.path | image}}">
-              </div>
-              <div class="row">
-                <h3>{{post.title}}</h3>
-              </div>
-              <div class="row">
-                <p>{{post.shortDescription}}</p>
-              </div>
-          </div>
+          <h3 class="mt-2">{{ review.title }}</h3>
+          {% for tag in tag %}
+          <p>{{ tag.tagName }}</p>
           {% endfor %}
+          <p>{{ review.statement }}</p>
+          <p>{{ review.user.firstName }}, {{ review.user.role }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-------The Spread--------->
+
+<section class="section container">
+  <div class="city-titles">
+    <div class="row">
+      <h2>{{ city.blogHighlight.spreadTitle }}</h2>
+    </div>
+    <div class="row">
+      <h5>A Blog by Butter</h5>
+    </div>
+    <div class="row">
+      {% for post in city.blogHighlight.posts%}
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="row">
+          <img class="neighborhood-img" src="{{ post.banner.path | image }}" />
         </div>
         <div class="row">
-          <button class="btn btn-dark">See More Posts<a href="/blog"></a></button>
+          <h3>{{ post.title }}</h3>
+        </div>
+        <div class="row">
+          <p>{{ post.shortDescription }}</p>
         </div>
       </div>
-    </section>
-    
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-    <!-------Instagram--------->
+<!-------The Spread--------->
 
-    <!------Footer------>
-    <div class="section">
-        {% include "partials/footer.html" %}
+<section class="section container">
+  <div class="city-titles">
+    <div class="row">
+      <h2>{{ city.blogHighlight.spreadTitle }}</h2>
+    </div>
+    <div class="row">
+      <h5>A Blog by Butter</h5>
+    </div>
+    <div class="row">
+      {% for post in city.blogHighlight.posts%}
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="row">
+          <img class="neighborhood-img" src="{{ post.banner.path | image }}" />
+        </div>
+        <div class="row">
+          <h3>{{ post.title }}</h3>
+        </div>
+        <div class="row">
+          <p>{{ post.shortDescription }}</p>
+        </div>
       </div>
- <script type="text/javascript" src="../../dist/bundle.js"></script>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <button class="btn btn-dark">See More Posts<a href="/blog"></a></button>
+    </div>
+  </div>
+</section>
+
+<!-------Instagram--------->
+
+<!------Footer------>
+<div class="section">
+  {% include "partials/footer.html" %}
+</div>
+<script type="text/javascript" src="../../dist/bundle.js"></script>
 {% endblock %}
-
-
