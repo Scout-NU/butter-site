@@ -8,7 +8,10 @@
         <div class="col-lg-8 col-md-6 col-sm-12">
           <h1 class="mb-5 butter-h1">{{ homepage.hero.heroHeader }}</h1>
           <p class="butter-p">{{ homepage.hero.heroBlurb }}</p>
-          <button href="#features" class="butter-btn-light mt-3">
+          <button
+            href="#features"
+            class="butter-btn-light btn-light-hover mt-3"
+          >
             Get involved
           </button>
         </div>
@@ -139,9 +142,8 @@
             src="{{ city.icon.path | image }}"
             alt="{{ city.icon.description }}"
           />
-          <span class="butter-h2">{{ city.cityName }}</span>
+          <span class="butter-h2 mx-3">{{ city.cityName }}</span>
         </div>
-
         {% endfor %}
       </div>
     </div>
@@ -150,5 +152,6 @@
   <div class="fp-auto-height section" id="section4">
     {% include "partials/footer.html" %}
   </div>
+
   {% endblock %}
 </div>
