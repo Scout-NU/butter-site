@@ -118,7 +118,7 @@
             <img class="feature-image" id="featureImage" src="#" />
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+        <div class="col-lg-4 col-md-5 col-sm-12 mt-5">
           <p class="butter-p text-white" id="featureBlurb"></p>
         </div>
       </div>
@@ -129,17 +129,17 @@
 
   <div class="section" id="section3" role="region">
     <div class="container">
-      <h2>Cities</h2>
+      <h2 class="butter-h2 text-charcoal">Cities</h2>
       {{ homepage.citiesSection.citiesBlurbHtml | safe }}
       <div class="row">
         {% for city in cities.items %}
         <div class="col-lg-4 col-sm-12">
           <img
-            width="50px"
+            class="city-icon"
             src="{{ city.icon.path | image }}"
             alt="{{ city.icon.description }}"
           />
-          <span>{{ city.cityName }}</span>
+          <span class="butter-h2">{{ city.cityName }}</span>
         </div>
 
         {% endfor %}

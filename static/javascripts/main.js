@@ -59,11 +59,13 @@ global.changeFeature = function(num) {
   $("#featureBlurb").text(feature.blurb);
   $("#featureImage").attr("src", imagePath);
   $("#featureImage").attr("alt", imageAlt);
-  $("#feature-button" + num)
-    .removeClass("butter-btn-transparent")
-    .addClass("butter-btn-light");
-  $("#feature-button" + currentFeature)
-    .removeClass("butter-btn-light")
-    .addClass("butter-btn-transparent");
+  if (num != currentFeature) {
+    $("#feature-button" + num)
+      .removeClass("butter-btn-transparent")
+      .addClass("butter-btn-light");
+    $("#feature-button" + currentFeature)
+      .removeClass("butter-btn-light")
+      .addClass("butter-btn-transparent");
+  }
   currentFeature = num;
 };
