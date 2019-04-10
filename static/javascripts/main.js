@@ -52,3 +52,11 @@ global.changeFeature = function(num) {
   $("#featureBlurb").text(feature.blurb);
   $("#featureImage").attr("src", imagePath);
 };
+
+//resize review images to be half of width
+var img = document.getElementsByClassName("thumbnails");
+const wdith = $('.thumbnails img').width();
+$('.thumbnails img').height(width / 2);
+
+
+console.log("hi")
