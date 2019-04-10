@@ -1,9 +1,12 @@
 {% extends "layouts/default.html" %} {% block content %}
 
 <div class="nav-spacer"></div>
+
+<!-----Header----->
 <div
   class="butter-hero bg-image d-flex align-items-center"
   style="background-image: url({{ site.settings.blogBanner.path | image }})"
+  role="banner"
 >
   <div class="container-fluid">
     <div class="row">
@@ -13,14 +16,17 @@
     </div>
   </div>
 </div>
-<div class="container my-5">
+
+<!-----Blog Posts----->
+<section class="container my-5">
   <div class="row">
     {% for post in items %}
-
     <div class="col-lg-6">
       <div
         class="blog-thumbnail"
         style="background-image: url({{ post.thumbnail.path | image }})"
+        role="img"
+        aria-label="{{post.thumbnail.description}}"
       ></div>
       <a href="{{post | route('post') }}">
         <h2 class="mt-3">{{ post.title }}</h2>
@@ -34,7 +40,8 @@
     </div>
 
     {% endfor %}
-  </div>
+  </section>
+
   <div class="container">
     <div class="row">
       {% include "partials/pagination.html" %}

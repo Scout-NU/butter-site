@@ -2,9 +2,11 @@ query {
   settings: getSiteSettings {
     siteTitle
     logo {
+      description
       path
     }
     blogBanner {
+      description
       path
     }
   }

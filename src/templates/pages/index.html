@@ -2,7 +2,7 @@
 
 <div id="fullpage">
   <!-----Hero------->
-  <div class="hero section">
+  <div class="hero section" role="banner">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12">
@@ -15,7 +15,7 @@
   </div>
 
   <!-----Local/Rec------->
-  <div class="roles section">
+  <div class="roles section" role="region">
     <div class="container">
       <div class="row py-3">
         <div class="col-lg-5 col-md-9 col-sm-12">
@@ -35,7 +35,7 @@
       </div>
 
       <!--Email capture-->
-      <div class="row" id="email-capture">
+      <div class="row" id="email-capture" role="form">
         <div class="col-lg-6 col-md-8 col-sm-12">
           <h3 id="email-form-header">Sign up for our email list!</h3>
           <form>
@@ -87,7 +87,7 @@
   </div>
 
   <!-----Learn more about Butter------->
-  <div class="features section">
+  <div class="features section" role="region">
     <div class="container">
       <div class="row">
         <h2>Butter is...</h2>
@@ -118,14 +118,15 @@
 
   <!-----Cities------->
 
-  <div class="cities section">
+  <div class="cities section" role="region">
     <div class="container">
       <h2>Cities</h2>
       {{ homepage.citiesSection.citiesBlurbHtml | safe }}
       <div class="row">
         {% for city in cities.items %}
         <div class="col-lg-4 col-sm-12">
-          <img width="50px" src="{{ city.icon.path | image }}" />
+          <img width="50px" src="{{ city.icon.path | image }}" 
+          alt="{{ city.icon.description}}"/>
           <span>{{ city.name }}</span>
         </div>
 
