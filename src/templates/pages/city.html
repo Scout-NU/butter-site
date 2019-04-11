@@ -9,36 +9,38 @@
           style="background-image: url({{ city.cityHeader.bannerImage.path | image }})">
         </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="row">
-                <h1>{{city.cityName}}</h1>
+              <div class="row mb-3">
+                <h1 class="butter-h1 text-cocoa">{{city.cityName}}</h1>
+              </div>
+              <div class="row mb-4">
+               <h3 class="butter-h3-muli text-charcoal">{{city.cityHeader.tagline}}</h3>
               </div>
               <div class="row">
-               <h4>{{city.cityHeader.tagline}}</h4>
-              </div>
-              <div class="row">
-                <p>{{city.cityHeader.description}}</p>
+                <p class="butter-p text-charcoal">{{city.cityHeader.description}}</p>
               </div>
             </div>
         </div>
   </div>
     <!-------Review Hits--------->
-    <section class="section">
-        <div class="row city-titles">
-            <h2>{{city.reviewSection.reviewSectionTitle}}</h2>
+    <section class="container section">
+        <div class="row mb-5 city-title">
+            <h2 class="butter-h2-lg text-dark-blue-grey">{{city.reviewSection.reviewSectionTitle}}</h2>
         </div>
         <div class="row">
             {% for review in city.reviewSection.reviews %}
-            <div class="col-xl-3 col-lg-3 col-sm-6 col-xs-12 width-fix">
-                <div class="row review-size">
-                      <img class="thumbnails"
-                      src="{{ review.image.path | image }}"
-                      alt="{{ review.image.description }}">
-                    <h3 class="mt-2">{{review.title}}</h3>
+            <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-centered mb-5 review-size">
+                <div class="row">
+                  <div class="img-wrapper" 
+                  style="background-image: url({{
+                    review.image.path | image}})"
+                  role="img"
+                  aria-label="{{ review.image.description }}"></div>
+                    <h3 class="butter-h3-muli mt-2" style="color: #184238;">{{review.title}}</h3>
                     {% for tag in tag %}
                     <p>{{tag.tagName}}</p>
                     {% endfor %}
-                    <p>{{review.statement}}</p>
-                    <p>{{review.user.firstName}}, {{review.user.role}}</p>
+                    <p class="butter-p">{{review.statement}}</p>
+                    <p class="butter-p text-dark-blue-grey"><strong>{{review.user.firstName}},</strong> {{review.user.role}}</p>
                 </div>
             </div>
             {% endfor %}
@@ -46,13 +48,14 @@
       </section>
 
     <!-------Email Capture--------->
-    <div class="section container" role="form">
-            <div class="row" id="email-capture">
+    <div class="section container-fluid" role="form">
+            <div class="row" id="email-capture" style="background: #06574f">
                     <div class="col-lg-6 col-md-8 col-sm-12">
-                      <h3 id="email-form-header">Sign up for our email list!</h3>
+                      <h3 class="butter-h2 text-light-peach" id="email-form-header">
+                        Sign up for our email list!</h3>
                       <form>
                         <div class="form-group email-form-group">
-                          <label>I'm interested in being:</label>
+                          <label class="butter-p text-white">I'm interested in being:</label>
                           <div class="form-check">
                             <input
                               class="form-check-input"
@@ -60,7 +63,8 @@
                               value=""
                               id="localCheck"
                             />
-                            <label class="form-check-label" for="recCheck">Local</label>
+                            <label class="form-check-label butter-p text-white" 
+                            for="recCheck">Local</label>
                           </div>
                           <div class="form-check">
                             <input
@@ -69,13 +73,13 @@
                               value=""
                               id="recCheck"
                             />
-                            <label class="form-check-label" for="recCheck"
-                              >Recommender</label
-                            >
+                            <label class="form-check-label butter-p text-white" for="recCheck"
+                              >Recommender</label>
                           </div>
                         </div>
                         <div class="container">
-                          <label for="exampleFormControlInput1">Email address</label>
+                          <label for="exampleFormControlInput1" class="butter-p text-white">
+                            Email address</label>
                           <div class="row">
                             <div class="col-9">
                               <div class="form-group">
@@ -88,7 +92,7 @@
                               </div>
                             </div>
                             <div class="col-3">
-                              <button class="btn btn-light">Tell us!</button>
+                              <button class="btn butter-btn-shaded">Tell us!</button>
                             </div>
                           </div>
                         </div>
@@ -98,23 +102,25 @@
     </div>
 
     <!-------Neighborhoods--------->
-    <section class="section">
-      <div class="row city-titles no-gutters">
-        <h2>{{city.neighborhoodSection.neighborhoodSectionTitle}}</h2>
+    <section class="section container-fluid">
+      <div class="row mb-5 city-title">
+        <h2 class="butter-h2-lg text-dark-blue-grey">{{city.neighborhoodSection.neighborhoodSectionTitle}}</h2>
       </div>
-      <div class="row no-gutters" id="neighborhood-posts">
+      <div class="row no-gutters">
         {% for neighborhood in city.neighborhoodSection.neighborhoods %}
-        <div class="col-lg-3 col-md-4 col-sm-12 col-centered" id="neighborhoods">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-centered neighborhood-size" id="neighborhoods">
           <div class="row">
-              <img class="neighborhood-img" src= "{{
-                neighborhood.neighborhoodPhoto.path | image
-              }}">
+              <div class="img-wrapper" 
+              style="background-image: url({{
+                neighborhood.neighborhoodPhoto.path | image}})"
+              role="img"
+              aria-label="{{ neighborhood.neighborhoodPhoto.description }}"></div>
           </div>
           <div class="row">
-              <h3>{{neighborhood.neighborhoodTitle}}</h3>
+              <h3 class="butter-h3-muli mt-2" style="color: #184238">{{neighborhood.neighborhoodTitle}}</h3>
           </div>
           <div class="row">
-              <p>{{neighborhood.neighborhoodBody}}</p>
+              <p class="butter-p text-charcoal">{{neighborhood.neighborhoodBody}}</p>
           </div>
         </div>
         {% endfor %}
@@ -124,33 +130,35 @@
 
     <!-------The Spread--------->
 
-    <section class="section container">
-      <div class="city-titles">
-        <div class="row">
-            <h2>{{city.blogHighlight.spreadTitle}}</h2>
-        </div>
-        <div class="row">
-          <h5>A Blog by Butter</h5>
-        </div>
-        <div class="row">
-          {% for post in city.blogHighlight.posts%}
-          <div class="col-lg-6 col-md-6 col-sm-12">
+    <section class="section container-fluid" style="background: #f2d5c7">
+      <div class="container">
+          <div class="city-titles">
               <div class="row">
-                  <img class="neighborhood-img" src= "{{
-                    post.banner.path | image}}">
+                  <h2 class="butter-h2 text-dark-blue-grey">{{city.blogHighlight.spreadTitle}}</h2>
               </div>
               <div class="row">
-                <h3>{{post.title}}</h3>
+                <h5 class="butter-h3-muli text-dark-blue-grey">A Blog by Butter</h5>
               </div>
               <div class="row">
-                <p>{{post.shortDescription}}</p>
+                {% for post in city.blogHighlight.posts%}
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="row">
+                        <img class="neighborhood-img" src= "{{
+                          post.banner.path | image}}">
+                    </div>
+                    <div class="row">
+                      <h3>{{post.title}}</h3>
+                    </div>
+                    <div class="row">
+                      <p>{{post.shortDescription}}</p>
+                    </div>
+                </div>
+                {% endfor %}
               </div>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="row">
-          <button class="btn btn-dark">See More Posts<a href="/blog"></a></button>
-        </div>
+              <div class="row">
+                <button class="butter-btn butter-btn-shaded">See More Posts<a href="/blog"></a></button>
+              </div>
+            </div>
       </div>
     </section>
     
