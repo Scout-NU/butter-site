@@ -6,11 +6,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12">
-          <h1 class="mb-5 butter-h1">{{ homepage.hero.heroHeader }}</h1>
-          <p class="butter-p">{{ homepage.hero.heroBlurb }}</p>
+          <h1 class="mb-5 butter-h1 text-cocoa">{{ homepage.hero.heroHeader }}</h1>
+          <p class="butter-p text-charcoal">{{ homepage.hero.heroBlurb }}</p>
           <button
             href="#features"
-            class="butter-btn-light btn-light-hover mt-3"
+            class="butter-btn butter-btn-light btn-light-hover mt-3"
           >
             Get involved
           </button>
@@ -24,18 +24,18 @@
     <div class="container">
       <div class="row py-3">
         <div class="col-lg-5 col-md-9 col-sm-12">
-          <h2 class="butter-h2">
+          <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.locals.localsHeader }}
           </h2>
-          <p class="butter-p">{{ homepage.rolesSection.locals.localsBlurb }}</p>
+          <p class="butter-p text-charcoal">{{ homepage.rolesSection.locals.localsBlurb }}</p>
         </div>
 
         <div class="col-2"></div>
         <div class="col-lg-5 col-md-12 col-sm-12">
-          <h2 class="butter-h2">
+          <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.recommenders.recommendersHeader }}
           </h2>
-          <p class="butter-p">
+          <p class="butter-p text-charcoal">
             {{ homepage.rolesSection.recommenders.recommendersBlurb }}
           </p>
         </div>
@@ -83,7 +83,7 @@
                   </div>
                 </div>
                 <div class="col-3">
-                  <button class="btn btn-light">Tell us!</button>
+                  <button class="butter-btn butter-btn-shaded">Tell us!</button>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
           <button
             id="feature-button{{ index }}"
-            class="butter-btn-transparent feature-button"
+            class="butter-btn butter-btn-transparent feature-button"
             onClick="changeFeature('{{ index }}')"
           >
             {{ feature.feature.title }}
@@ -132,7 +132,7 @@
 
   <div class="section" id="section3" role="region">
     <div class="container">
-      <h2 class="butter-h2 text-charcoal">Cities</h2>
+      <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
       {{ homepage.citiesSection.citiesBlurbHtml | safe }}
       <div class="row">
         {% for city in cities.items %}

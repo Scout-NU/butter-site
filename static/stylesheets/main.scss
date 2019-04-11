@@ -5,10 +5,11 @@
 $cocoa: #925842;
 $charcoal: #4a4a4a;
 $light-peach: #f2d5c7;
+$dark-blue-grey: #06574f;
 
 /* media breakpoints */
-$break-mobile: 320px;
-$break-tablet: 768px;
+$break-mobile: 540px;
+$break-tablet: 800px;
 $break-desktop: 960px;
 
 section {
@@ -22,20 +23,30 @@ section {
   font-family: "PT Serif", serif;
   font-size: 60px;
   font-weight: bold;
-  color: $cocoa;
 }
 
 .butter-h2 {
   font-family: "PT Serif", serif;
   font-size: 28px;
   font-weight: bold;
-  color: $cocoa;
 }
+
+.butter-h3-muli {
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.butter-h2-lg{
+	font-family: "PT Serif", serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+
 
 .butter-p {
   font-family: "Muli", sans-serif;
   font-size: 16px;
-  color: $charcoal;
 }
 
 .text-white {
@@ -46,20 +57,35 @@ section {
   color: $charcoal !important;
 }
 
-.butter-btn-light {
-  font-family: Muli;
+.text-dark-blue-grey {
+	color: $dark-blue-grey;
+}
+
+.text-light-peach {
+	color: $light-peach;
+}
+
+.text-cocoa {
+	color: $cocoa;
+}
+
+.butter-btn {
+font-family: Muli;
   font-size: 18px;
   font-weight: bold;
-  color: $cocoa;
   text-align: center;
-  border-radius: 5px;
-  background-color: white;
-  border: solid 2px $cocoa;
   display: inline-block;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
+  border-radius: 5px;
+}
+
+.butter-btn-light {
+  color: $cocoa;
+  background-color: white;
+  border: solid 2px $cocoa;
   &:hover {
     background-color: $cocoa;
     color: white;
@@ -67,40 +93,30 @@ section {
 }
 
 .feature-btn-light {
-  font-family: Muli;
-  font-size: 18px;
-  font-weight: bold;
   color: $cocoa;
-  text-align: center;
-  border-radius: 5px;
   background-color: white;
   border: solid 2px $cocoa;
-  display: inline-block;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .butter-btn-transparent {
-  font-family: Muli;
-  font-size: 18px;
-  font-weight: bold;
   color: white;
   text-align: center;
-  border-radius: 5px;
   background-color: transparent;
   border: solid 2px white;
-  display: inline-block;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
   &:hover {
     background: white;
     color: $cocoa;
   }
 }
+
+.butter-btn-shaded {
+	color: white;
+	background-color: $cocoa;
+	&:hover {
+		background: white;
+		color: $cocoa;
+	  }
+   }
 
 .feature-button {
   width: 100%;
@@ -219,14 +235,6 @@ section {
   background-repeat: no-repeat;
 }
 
-.city-titles {
-  margin-bottom: 2em;
-  margin-left: 2em;
-}
-
-#review {
-  margin: 0em 3em;
-}
 
 .author-icon {
   height: 50px;
@@ -246,20 +254,19 @@ section {
   margin-top: 10em;
 }
 
-#neighborhoods {
-  margin-right: 4em;
-}
 
-#neighborhood-posts {
-  margin-left: -2em;
-}
-
+.img-wrapper {
+	width: 100%;
+	padding-bottom: 60%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+  }
 .review-size {
-  margin-left: 42px;
   @media screen and (max-width: $break-mobile) {
     min-width: 273px;
   }
-  @media screen and (min-width: $break-tablet) {
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
     min-width: 289px;
   }
   @media screen and (min-width: $break-desktop) {
@@ -268,10 +275,28 @@ section {
   }
 }
 
-.thumbnails {
-  width: 100%;
-  object-fit: fill;
+.neighborhood-size {
+	@media screen and (max-width: $break-mobile) {
+	  min-width: 274px;
+	}
+	@media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+	  max-width: 180px;
+	
+	}
+	@media screen and (min-width: $break-desktop) {
+	  max-width: 299px;
+	}
+  }
+
+.city-title {
+	@media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+		margin-left: 5px;
+	  }
+	@media screen and (min-width: $break-desktop) {
+		margin-left: 40px;
+	}
 }
+
 
 /* Pagination */
 
