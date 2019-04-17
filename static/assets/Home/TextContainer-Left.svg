@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="314px" height="303px" viewBox="0 0 314 303" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Oval Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M301.854155,988.739065 C380.830874,988.739065 470,933.595094 470,854.821606 C470,776.048119 423.567225,713 344.590506,713 C265.613787,713 184,776.048119 184,854.821606 C184,933.595094 222.877435,988.739065 301.854155,988.739065 Z" id="path-1"></path>
+        <filter x="-8.2%" y="-6.7%" width="116.4%" height="117.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.57254902   0 0 0 0 0.345098039   0 0 0 0 0.258823529  0 0 0 0.6 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Desktop" transform="translate(-170.000000, -704.000000)">
+            <g id="Oval-Copy-4">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
