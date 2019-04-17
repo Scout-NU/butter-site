@@ -24,11 +24,15 @@ query {
           title
         }
       }
+      featureImageBlob {
+        path
+      }
       sectionTitle
     }
     hero {
       heroBlurb
       heroHeader
+      heroHeaderHtml
     }
     rolesSection {
       locals {

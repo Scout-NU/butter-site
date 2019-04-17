@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="3102px" viewBox="0 0 320 3102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>spreadUImobilelinework</title>
+    <desc>Created with Sketch.</desc>
+    <g id="spreadUImobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="320" height="3102"></rect>
+        <path d="M694.851576,78.0866866 C675.316894,172.117313 648.541524,285.506924 606.358359,368.616087 C537.190317,504.890785 360.133204,525.366717 233.353612,501.537924" id="Line-2-Copy-9" stroke="#925842" stroke-linecap="square" stroke-dasharray="15" transform="translate(464.102594, 294.083412) rotate(124.000000) translate(-464.102594, -294.083412) "></path>
+        <path d="M-104.009692,2778.45366 C-34.283017,2796.8102 12.221747,2805.98847 35.5045998,2805.98847 C70.4288791,2805.98847 110.238885,2805.98847 110.238885,2778.45366 C110.238885,2750.91884 64.8543223,2747.41415 55.330315,2762.45496 C48.8360819,2772.71099 50.0227512,2797.25827 76.1617493,2814.03465 C88.3564552,2821.86139 106.901899,2825.92395 130.961747,2829.81915 C206.593179,2842.06357 252.56142,2805.3303 329.807304,2817.57472 C407.053188,2829.81915 457.204561,2889.69429 513.524621,2910.25362 C551.071327,2923.95983 602.226556,2927.87405 666.990308,2921.99627" id="Path-2" stroke="#925842" stroke-dasharray="15" transform="translate(281.490308, 2839.142435) rotate(10.000000) translate(-281.490308, -2839.142435) "></path>
+        <text id="1" font-family="Muli-Bold, Muli" font-size="16" font-weight="bold" fill="#434343">
+            <tspan x="131" y="2629">1</tspan>
+        </text>
+        <text id="2" font-family="Muli-Bold, Muli" font-size="16" font-weight="bold" fill="#434343">
+            <tspan x="180" y="2629">2</tspan>
+        </text>
+    </g>
+</svg>

@@ -5,15 +5,20 @@
   <div class="section" id="section0" role="banner">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-6 col-sm-12">
-          <h1 class="mb-5 butter-h1 text-cocoa">{{ homepage.hero.heroHeader }}</h1>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <h1 class="mb-5 butter-h1 text-cocoa">
+            {{ homepage.hero.heroHeaderHtml | safe }}
+          </h1>
           <p class="butter-p text-charcoal">{{ homepage.hero.heroBlurb }}</p>
-          <button
-            href="#features"
+          <a
+            href="#roles"
             class="butter-btn butter-btn-light btn-light-hover mt-3"
           >
             Get involved
-          </button>
+        </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <img id="sydney-map" src="../assets/maps/sydney_map.png"></img>
         </div>
       </div>
     </div>
@@ -22,16 +27,20 @@
   <!-----Local/Rec------->
   <div class="section" id="section1" role="region">
     <div class="container">
-      <div class="row py-3">
-        <div class="col-lg-5 col-md-9 col-sm-12">
+      <div class="row py-3 mt-5">
+        <div
+          class="roles-locals col-centered full-bg-img col-lg-4 col-md-9 col-sm-12"
+        >
           <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.locals.localsHeader }}
           </h2>
-          <p class="butter-p text-charcoal">{{ homepage.rolesSection.locals.localsBlurb }}</p>
+          <p class="butter-p text-charcoal">
+            {{ homepage.rolesSection.locals.localsBlurb }}
+          </p>
         </div>
-
-        <div class="col-2"></div>
-        <div class="col-lg-5 col-md-12 col-sm-12">
+        <div
+          class="roles-recommenders col-centered full-bg-img col-lg-5 col-md-12 col-sm-12"
+        >
           <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.recommenders.recommendersHeader }}
           </h2>
@@ -41,36 +50,47 @@
         </div>
       </div>
 
-      <!--Email capture-->
-      <div class="row" id="email-capture" role="form">
+      <div class="row" id="email-capture">
         <div class="col-lg-6 col-md-8 col-sm-12">
-          <h3 id="email-form-header">Sign up for our email list!</h3>
+          <h3 class="butter-h3-muli text-charcoal" id="email-form-header">
+            Join the Butter community.
+          </h3>
           <form>
-            <div class="form-group email-form-group">
-              <label>I'm interested in being:</label>
+            <div class="form-group email-form-group ml-3">
+              <span class="butter-p text-charcoal">I'd like to be a:</span>
               <div class="form-check">
                 <input
                   class="form-check-input"
-                  type="checkbox"
-                  value=""
+                  type="radio"
+                  value="local"
+                  name="email-capture-buttons"
                   id="localCheck"
                 />
-                <label class="form-check-label" for="recCheck">Local</label>
+                <label
+                  class="form-check-label butter-p text-charcoal"
+                  for="localCheck"
+                  >Local</label
+                >
               </div>
-              <div class="form-check">
+              <div class="form-check ml-4">
                 <input
                   class="form-check-input"
-                  type="checkbox"
-                  value=""
+                  type="radio"
+                  value="recommender"
+                  name="email-capture-buttons"
                   id="recCheck"
                 />
-                <label class="form-check-label" for="recCheck"
+                <label
+                  class="form-check-label butter-p text-charcoal"
+                  for="recCheck"
                   >Recommender</label
                 >
               </div>
             </div>
             <div class="container">
-              <label for="exampleFormControlInput1">Email address</label>
+              <label for="exampleFormControlInput1" class="butter-p text-charcoal">
+                Email address</label
+              >
               <div class="row">
                 <div class="col-9">
                   <div class="form-group">
@@ -83,7 +103,7 @@
                   </div>
                 </div>
                 <div class="col-3">
-                  <button class="butter-btn butter-btn-shaded">Tell us!</button>
+                  <button class="btn butter-btn-shaded">Tell us!</button>
                 </div>
               </div>
             </div>
@@ -93,65 +113,73 @@
     </div>
   </div>
 
-  <!-----Learn more about Butter------->
-  <div class="section" id="section2" role="region">
-    <div class="container">
-      <div class="row">
-        <h2 class="butter-h2 text-white">
-          {{ homepage.featuresSection.sectionTitle }}
-        </h2>
-      </div>
-      <div class="row" id="feature-buttons">
-        {% for feature in homepage.featuresSection.featureList %} {% set index =
-        loop.index0 %}
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <button
-            id="feature-button{{ index }}"
-            class="butter-btn butter-btn-transparent feature-button"
-            onClick="changeFeature('{{ index }}')"
-          >
-            {{ feature.feature.title }}
-          </button>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-5">
-          <div class="feature-image-blob">
-            <img class="feature-image" id="featureImage" src="#" />
+      <!-----Learn more about Butter------->
+      <div class="section" id="section2" role="region">
+        <div class="container">
+          <div class="row">
+            <h2 class="butter-h2 text-white mt-5">
+              {{ homepage.featuresSection.sectionTitle }}
+            </h2>
+          </div>
+          <div class="row" id="feature-buttons">
+            {% for feature in homepage.featuresSection.featureList %} {% set
+            index = loop.index0 %}
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <button
+                id="feature-button{{ index }}"
+                class="butter-btn butter-btn-transparent feature-button"
+                onClick="changeFeature('{{ index }}')"
+              >
+                {{ feature.feature.title }}
+              </button>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-5">
+              <div
+                class="feature-image-blob full-bg-img"
+              >
+                <img class="feature-image" id="featureImage" src="#" />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-12 mt-5">
+              <p class="butter-p text-white" id="featureBlurb"></p>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-5 col-sm-12 mt-5">
-          <p class="butter-p text-white" id="featureBlurb"></p>
+      </div>
+
+      <!-----Cities------->
+
+      <div class="section" id="section3" role="region">
+        <div class="container">
+          <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
+          {{ homepage.citiesSection.citiesBlurbHtml | safe }}
+          <div class="row">
+            {% for city in cities.items %}
+            <div class="col-lg-4 col-sm-12">
+              <img
+                class="city-icon"
+                src="{{ city.icon.path | image }}"
+                alt="{{ city.icon.description }}"
+              />
+              <a
+                href="/cities/{{ city.cityName }}"
+                class="butter-h2 mx-3 text-cocoa butter-a"
+                >{{ city.cityName }}</a
+              >
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-----Cities------->
-
-  <div class="section" id="section3" role="region">
-    <div class="container">
-      <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
-      {{ homepage.citiesSection.citiesBlurbHtml | safe }}
-      <div class="row">
-        {% for city in cities.items %}
-        <div class="col-lg-4 col-sm-12">
-          <img
-            class="city-icon"
-            src="{{ city.icon.path | image }}"
-            alt="{{ city.icon.description }}"
-          />
-          <span class="butter-h2 mx-3">{{ city.cityName }}</span>
-        </div>
-        {% endfor %}
+      <!-----Footer------->
+      <div class="fp-auto-height section" id="section4">
+        {% include "partials/footer.html" %}
       </div>
+
+      {% endblock %}
     </div>
   </div>
-  <!-----Footer------->
-  <div class="fp-auto-height section" id="section4">
-    {% include "partials/footer.html" %}
-  </div>
-
-  {% endblock %}
 </div>
