@@ -4,21 +4,49 @@
 
 <!-----Header----->
 <div
-  class="butter-hero bg-image d-flex align-items-center"
+  class="butter-hero dark-blue-grey-overlay bg-image d-flex align-items-center"
   style="background-image: url({{ site.settings.blogBanner.path | image }})"
   role="banner"
 >
   <div class="container-fluid">
     <div class="row">
-      <h1 class="offset-lg-2 col-lg-4 butter-h1">
+      <h1 class="offset-lg-2 col-lg-4 butter-h1 text-white">
         The Spread
       </h1>
     </div>
   </div>
 </div>
 
+<!-----Featured Blog Post----->
+<section class="container mt-3">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="butter-h3-muli blog-featured-tag text-white">Featured</p>
+        <div
+          class="blog-featured-thumbnail"
+          style="background-image: url({{ site.settings.featuredBlogPost.thumbnail.path | image }})"
+          role="img"
+          aria-label="{{post.thumbnail.description}}"
+        ></div>
+        <a href="{{site.settings.featuredBlogPost | route('post') }}">
+          <h2 class="butter-featured-blog-post text-dark-blue-grey mt-3">{{ site.settings.featuredBlogPost.title }}</h2>
+        </a>
+        <p class="butter-p text-charcoal">{{ site.settings.featuredBlogPost.shortDescription }}</p>
+        <p class="butter-p text-charcoal">
+            <strong class="text-dark-charcoal">by {{ site.settings.featuredBlogPost.author.firstName }} 
+              {{ site.settings.featuredBlogPost.author.lastName }}</strong> |
+          {{site.settings.featuredBlogPost.date |
+              date('MMMM Do YYYY') }}
+        </p>
+      </div>
+      </section>
+
+    <div class="container">
+        <hr class="blog-hr">
+     </div>
+
 <!-----Blog Posts----->
-<section class="container my-5">
+<section class="container mb-0">
   <div class="row">
     {% for post in items %}
     <div class="col-lg-6">
@@ -29,11 +57,11 @@
         aria-label="{{post.thumbnail.description}}"
       ></div>
       <a href="{{post | route('post') }}">
-        <h2 class="mt-3">{{ post.title }}</h2>
+        <h2 class="butter-h2-lg text-dark-blue-grey mt-3">{{ post.title }}</h2>
       </a>
-      <p>{{ post.shortDescription }}</p>
-      <p>
-        by {{ post.author.firstName }} {{ post.author.lastName }} |
+      <p class="butter-p text-charcoal">{{ post.shortDescription }}</p>
+      <p class="butter-p text-charcoal mb-5">
+        <strong class="text-dark-charcoal">by {{ post.author.firstName }} {{ post.author.lastName }}</strong> |
         {{post.date |
             date('MMMM Do YYYY') }}
       </p>
@@ -48,5 +76,10 @@
     </div>
   </div>
 </div>
+
+<!-----Footer------->
+<div class="section">
+    {% include "partials/footer.html" %}
+  </div>
 
 {% endblock %}

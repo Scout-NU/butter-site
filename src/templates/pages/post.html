@@ -2,14 +2,15 @@
 
 <div class="nav-spacer"></div>
 <article>
-    <div
+  <div
     class="butter-hero bg-image d-flex align-items-end"
     style="background-image: url({{ post.banner.path | image }})"
     role="img"
-    aria-label="{{post.banner.description}}">
+    aria-label="{{ post.banner.description }}"
+  >
     <div class="container-fluid">
       <div class="row">
-        <h1 class="offset-lg-2 col-lg-4 butter-h1">
+        <h1 class="offset-lg-2 col-lg-4 butter-h1 text-white">
           {{ post.title }}
         </h1>
       </div>
@@ -49,4 +50,9 @@
     </div>
   </section>
 </article>
+
+<!-----Footer------->
+<div class="section">
+  {% include "partials/footer.html" %}
+</div>
 {% endblock %}

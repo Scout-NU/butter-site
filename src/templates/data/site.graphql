@@ -9,5 +9,44 @@ query {
       description
       path
     }
+    featuredBlogPost {
+      _id
+      author {
+        _id
+        description
+        email
+        firstName
+        lastName
+        role
+      }
+      banner {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      content
+      date
+      shortDescription
+      thumbnail {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      title
+    }
   }
 }

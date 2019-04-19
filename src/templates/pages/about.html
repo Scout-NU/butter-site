@@ -4,11 +4,12 @@
 <!-----Header------>
 <div id="about-header" role="banner">
   <div
-    class="butter-hero bg-image d-flex align-items-center"
-    style="background: linear-gradient(rgba(146, 88, 66, .6), rgba(146, 88, 66, .6)), url({{
+    class="butter-hero cocoa-overlay bg-image d-flex align-items-center"
+    style="background-image: url({{
       about.headerSection.headerImage.path | image
     }})"
   >
+    <!-- <div class="butter-hero overlay background-cocoa"></div> -->
     <div class="container-fluid">
       <div class="row">
         <h1 class="offset-lg-1 col-lg-6 butter-h1 text-white">
@@ -47,9 +48,9 @@
 <!----Values---->
 <section id="values">
   <div class="container">
-    <h1 class="butter-h2 text-dark-blue-grey">
+    <h2 class="butter-h2-lg text-dark-blue-grey">
       {{ about.valuesSection.valuesTitle }}
-    </h1>
+    </h2>
     <div class="row">
       {% for value in about.valuesSection.values %}
       <div class="value col-lg-6">
@@ -77,18 +78,18 @@
 <!-----About the Team----->
 <section id="team">
   <div class="container">
-    <h1 class="butter-h2 text-dark-blue-grey">
+    <h2 class="butter-h2-lg text-dark-blue-grey">
       {{ about.teamSection.teamTitle }}
-    </h1>
+    </h2>
     <div class="row">
       {% for teamMember in about.teamSection.teamMember %}
-      <div class="value col-lg-3 text-center mt-5">
+      <div class="value col-lg-3 col-md-6 col-sm-6 text-center mt-5">
         <img
           class="team-image circle-image"
           src="{{ teamMember.userImage.path | image }}"
           alt="{{ teamMember.userImage.description }}"
         />
-        <p class="butter-p text-charcoal mt-3 mb-1">
+        <p class="butter-h3-muli text-charcoal mt-3 mb-1">
           <strong
             >{{ teamMember.firstName }} <br />
             {{ teamMember.lastName }}</strong
@@ -105,9 +106,9 @@
 
 <section id="faq">
   <div class="container">
-    <h1 class="butter-h2 text-dark-blue-grey mb-2">
+    <h2 class="butter-h2-lg text-dark-blue-grey mb-2">
       {{ about.faqSection.faqTitle }}
-    </h1>
+    </h2>
     <div class="row mt-5">
       {% for faq in about.faqSection.questionAndAnswer %}
       <div class="value col-lg-9 mb-4">

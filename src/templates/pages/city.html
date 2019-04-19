@@ -2,172 +2,203 @@
 
 <div class="container nav-spacer"></div>
 
-    <!------- Header--------->
-  <div class="container-fluid d-flex align-items-center" role="banner">
-      <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12"
-          style="background-image: url({{ city.cityHeader.bannerImage.path | image }})">
-        </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="row mb-3">
-                <h1 class="butter-h1 text-cocoa">{{city.cityName}}</h1>
-              </div>
-              <div class="row mb-4">
-               <h3 class="butter-h3-muli text-charcoal">{{city.cityHeader.tagline}}</h3>
-              </div>
-              <div class="row">
-                <p class="butter-p text-charcoal">{{city.cityHeader.description}}</p>
-              </div>
-            </div>
-        </div>
-  </div>
-    <!-------Review Hits--------->
-    <section class="container section">
-        <div class="row mb-5 city-title">
-            <h2 class="butter-h2-lg text-dark-blue-grey">{{city.reviewSection.reviewSectionTitle}}</h2>
-        </div>
-        <div class="row">
-            {% for review in city.reviewSection.reviews %}
-            <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-centered mb-5 review-size">
-                <div class="row">
-                  <div class="img-wrapper" 
-                  style="background-image: url({{
-                    review.image.path | image}})"
-                  role="img"
-                  aria-label="{{ review.image.description }}"></div>
-                    <h3 class="butter-h3-muli mt-2" style="color: #184238;">{{review.title}}</h3>
-                    {% for tag in tag %}
-                    <p>{{tag.tagName}}</p>
-                    {% endfor %}
-                    <p class="butter-p">{{review.statement}}</p>
-                    <p class="butter-p text-dark-blue-grey"><strong>{{review.user.firstName}},</strong> {{review.user.role}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-      </section>
-
-    <!-------Email Capture--------->
-    <div class="section container-fluid" role="form">
-            <div class="row" id="email-capture" style="background: #06574f">
-                    <div class="col-lg-6 col-md-8 col-sm-12">
-                      <h3 class="butter-h2 text-light-peach" id="email-form-header">
-                        Sign up for our email list!</h3>
-                      <form>
-                        <div class="form-group email-form-group">
-                          <label class="butter-p text-white">I'm interested in being:</label>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="localCheck"
-                            />
-                            <label class="form-check-label butter-p text-white" 
-                            for="recCheck">Local</label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="recCheck"
-                            />
-                            <label class="form-check-label butter-p text-white" for="recCheck"
-                              >Recommender</label>
-                          </div>
-                        </div>
-                        <div class="container">
-                          <label for="exampleFormControlInput1" class="butter-p text-white">
-                            Email address</label>
-                          <div class="row">
-                            <div class="col-9">
-                              <div class="form-group">
-                                <input
-                                  type="email"
-                                  class="form-control"
-                                  id="exampleFormControlInput1"
-                                  placeholder="me@example.com"
-                                />
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <button class="btn butter-btn-shaded">Tell us!</button>
-                            </div>
-                          </div>
-                        </div>
-                    </form>
-          </div>
-          </div>
-    </div>
-
-    <!-------Neighborhoods--------->
-    <section class="section container-fluid">
-      <div class="row mb-5 city-title">
-        <h2 class="butter-h2-lg text-dark-blue-grey">{{city.neighborhoodSection.neighborhoodSectionTitle}}</h2>
+<!------- Header--------->
+<div class="container-fluid d-flex align-items-center" role="banner">
+  <div class="row">
+    <div
+      class="col-lg-6 col-md-6 col-sm-12 city-banner"
+      style="background-image: url({{
+        city.cityHeader.bannerImage.path | image
+      }})"
+    ></div>
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-5 pr-5">
+      <div class="row mb-3">
+        <h1 class="butter-h1 text-cocoa">{{ city.cityName }}</h1>
       </div>
-      <div class="row no-gutters">
-        {% for neighborhood in city.neighborhoodSection.neighborhoods %}
-        <div class="col-lg-3 col-md-4 col-sm-12 col-centered neighborhood-size" id="neighborhoods">
+      <div class="row mb-4">
+        <h3 class="butter-h3-muli text-charcoal">
+          {{ city.cityHeader.tagline }}
+        </h3>
+      </div>
+      <div class="row">
+        <p class="butter-p text-charcoal">{{ city.cityHeader.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------Review Hits--------->
+<section class="container section">
+  <div class="row mb-5 city-title">
+    <h2 class="butter-h2-lg text-dark-blue-grey">
+      {{ city.reviewSection.reviewSectionTitle }}
+    </h2>
+  </div>
+  <div class="row">
+    {% for review in city.reviewSection.reviews %}
+    <div
+      class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-centered mb-5 review-size"
+    >
+      <div class="row">
+        <div
+          class="img-wrapper"
+          style="background-image: url({{ review.image.path | image }})"
+          role="img"
+          aria-label="{{ review.image.description }}"
+        ></div>
+        <h3 class="butter-h3-muli mt-2" style="color: #184238;">
+          {{ review.title }}
+        </h3>
+        {% for tag in tag %}
+        <p>{{ tag.tagName }}</p>
+        {% endfor %}
+        <p class="butter-p">{{ review.statement }}</p>
+        <p class="butter-p text-dark-blue-grey">
+          <strong>{{ review.user.firstName }},</strong> {{ review.user.role }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-------Email Capture--------->
+<div class="section container-fluid" role="form">
+  <div class="row" id="email-capture" style="background: #06574f">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <h3 class="butter-h2 text-light-peach" id="email-form-header">
+        Sign up for our email list!
+      </h3>
+      <form>
+        <div class="form-group email-form-group">
+          <label class="butter-p text-white">I'm interested in being:</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="localCheck"
+            />
+            <label class="form-check-label butter-p text-white" for="recCheck"
+              >Local</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="recCheck"
+            />
+            <label class="form-check-label butter-p text-white" for="recCheck"
+              >Recommender</label
+            >
+          </div>
+        </div>
+        <div class="container">
+          <label for="exampleFormControlInput1" class="butter-p text-white">
+            Email address</label
+          >
           <div class="row">
-              <div class="img-wrapper" 
-              style="background-image: url({{
-                neighborhood.neighborhoodPhoto.path | image}})"
-              role="img"
-              aria-label="{{ neighborhood.neighborhoodPhoto.description }}"></div>
+            <div class="col-9">
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="me@example.com"
+                />
+              </div>
+            </div>
+            <div class="col-3">
+              <button class="btn butter-btn-shaded">Tell us!</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-------Neighborhoods--------->
+<section class="section container-fluid">
+  <div class="row mb-5 city-title">
+    <h2 class="butter-h2-lg text-dark-blue-grey">
+      {{ city.neighborhoodSection.neighborhoodSectionTitle }}
+    </h2>
+  </div>
+  <div class="row no-gutters">
+    {% for neighborhood in city.neighborhoodSection.neighborhoods %}
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 col-centered neighborhood-size"
+      id="neighborhoods"
+    >
+      <div class="row">
+        <div
+          class="img-wrapper"
+          style="background-image: url({{
+            neighborhood.neighborhoodPhoto.path | image
+          }})"
+          role="img"
+          aria-label="{{ neighborhood.neighborhoodPhoto.description }}"
+        ></div>
+      </div>
+      <div class="row">
+        <h3 class="butter-h3-muli mt-2" style="color: #184238">
+          {{ neighborhood.neighborhoodTitle }}
+        </h3>
+      </div>
+      <div class="row">
+        <p class="butter-p text-charcoal">
+          {{ neighborhood.neighborhoodBody }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-------The Spread--------->
+
+<section class="section container-fluid" style="background: #f2d5c7">
+  <div class="container">
+    <div class="city-titles">
+      <div class="row">
+        <h2 class="butter-h2 text-dark-blue-grey">
+          {{ city.blogHighlight.spreadTitle }}
+        </h2>
+      </div>
+      <div class="row">
+        <h5 class="butter-h3-muli text-dark-blue-grey">A Blog by Butter</h5>
+      </div>
+      <div class="row">
+        {% for post in city.blogHighlight.posts%}
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="row">
+            <img class="blog-thumbnail" src="{{ post.banner.path | image }}" />
           </div>
           <div class="row">
-              <h3 class="butter-h3-muli mt-2" style="color: #184238">{{neighborhood.neighborhoodTitle}}</h3>
+            <h3>{{ post.title }}</h3>
           </div>
           <div class="row">
-              <p class="butter-p text-charcoal">{{neighborhood.neighborhoodBody}}</p>
+            <p>{{ post.shortDescription }}</p>
           </div>
         </div>
         {% endfor %}
       </div>
-    </section>
-
-
-    <!-------The Spread--------->
-
-    <section class="section container-fluid" style="background: #f2d5c7">
-      <div class="container">
-          <div class="city-titles">
-              <div class="row">
-                  <h2 class="butter-h2 text-dark-blue-grey">{{city.blogHighlight.spreadTitle}}</h2>
-              </div>
-              <div class="row">
-                <h5 class="butter-h3-muli text-dark-blue-grey">A Blog by Butter</h5>
-              </div>
-              <div class="row">
-                {% for post in city.blogHighlight.posts%}
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="row">
-                        <img class="neighborhood-img" src= "{{
-                          post.banner.path | image}}">
-                    </div>
-                    <div class="row">
-                      <h3>{{post.title}}</h3>
-                    </div>
-                    <div class="row">
-                      <p>{{post.shortDescription}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-              </div>
-              <div class="row">
-                <button class="butter-btn butter-btn-shaded">See More Posts<a href="/blog"></a></button>
-              </div>
-            </div>
+      <div class="row">
+        <button class="butter-btn butter-btn-shaded">
+          See More Posts<a href="/blog"></a>
+        </button>
       </div>
-    </section>
-    
+    </div>
+  </div>
+</section>
 
-    <!-------Instagram--------->
+<!-------Instagram--------->
 
-    <!------Footer------>
-    <div class="section">
-        {% include "partials/footer.html" %}
-      </div>
- <script type="text/javascript" src="../../dist/bundle.js"></script>
+<!------Footer------>
+<div class="section">
+  {% include "partials/footer.html" %}
+</div>
+<script type="text/javascript" src="../../dist/bundle.js"></script>
 {% endblock %}
