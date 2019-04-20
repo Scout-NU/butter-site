@@ -26,7 +26,7 @@ section {
   font-family: "PT Serif", serif;
   font-weight: bold;
   @media screen and (max-width: $break-mobile) {
-    font-size: 28px;
+    font-size: 32px;
   }
   @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
     font-size: 48px;
@@ -406,6 +406,12 @@ section {
   background-repeat: no-repeat;
   background-position: center bottom;
   height: 600px;
+  @media screen and (max-width: $break-mobile) {
+    height: 350px;
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+    height: 400px;
+  }
 }
 
 .butter-logo {
@@ -494,6 +500,9 @@ section {
 
 .value-image {
   height: 250px;
+  @media screen and (max-width: $break-mobile) {
+    height: 200px;
+  }
 }
 
 .value-text {
@@ -538,8 +547,39 @@ section {
   background-repeat: no-repeat;
 }
 
+.city-form-section {
+  height: 450px;
+  background-image: url("../assets/City/FormContainer.svg");
+  padding-top: 130px;
+}
+
+.city-spread-section {
+  height: auto;
+  background-image: url("../assets/City/SpreadContainer.svg");
+  padding-bottom: 60px;
+}
+
+.city-wavy-container {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .author-icon {
-  height: 75px;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.post-author-info {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.post-author-role {
+  display: block;
 }
 
 .blog-featured-tag {
@@ -595,18 +635,6 @@ section {
   @media screen and (min-width: $break-desktop) {
     min-width: 180px;
     max-width: 230px;
-  }
-}
-
-.neighborhood-size {
-  @media screen and (max-width: $break-mobile) {
-    min-width: 274px;
-  }
-  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
-    max-width: 180px;
-  }
-  @media screen and (min-width: $break-desktop) {
-    max-width: 299px;
   }
 }
 

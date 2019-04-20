@@ -3,14 +3,14 @@
 <div class="nav-spacer"></div>
 <article>
   <div
-    class="butter-hero bg-image d-flex align-items-end"
+    class="butter-hero dark-blue-grey-overlay bg-image d-flex align-items-end"
     style="background-image: url({{ post.banner.path | image }})"
     role="img"
     aria-label="{{ post.banner.description }}"
   >
     <div class="container-fluid">
       <div class="row">
-        <h1 class="offset-lg-2 col-lg-4 butter-h1 text-white">
+        <h1 class="offset-lg-2 col-lg-6 butter-h1 text-white">
           {{ post.title }}
         </h1>
       </div>
@@ -19,33 +19,27 @@
   <section class="container blogpost-body">
     <div class="row">
       <div class="col-lg-8 col-centered my-3">
-        <p>
-          {{ post.author.firstName }} {{ post.author.lastName }} |
-          {{post.date |
-          date('MMMM Do YYYY') }}
-        </p>
-      </div>
-      <div class="col-lg-8 col-centered">
-        {{ post.contentHtml | safe }}
-      </div>
-      <div class="col-lg-8 col-centered">
-        <div class="row">
-          <div class="col-lg-1">
-            <img
-              class="circle-image author-icon"
-              src="{{ post.author.userImage.path | image }}"
-              alt="{{ post.author.userImage.description }}"
-            />
-          </div>
-          <div class="col-lg-6">
-            <p class="mb-0">
-              by {{ post.author.firstName }} {{ post.author.lastName }}
-            </p>
-            <p class="mt-0 pt-0">
-              {{ post.author.firstName }} is a {{ post.author.role }} at Butter.
-            </p>
-          </div>
+        <img
+          class="circle-image author-icon"
+          src="{{ post.author.userImage.path | image }}"
+          alt="{{ post.author.userImage.description }}"
+        />
+        <div class="post-author-info">
+          <span class="butter-p text-charcoal">
+            <strong class="text-dark-charcoal"
+              >{{ post.author.firstName }} {{ post.author.lastName }}</strong
+            >
+            <span class="text-light-peach mx-1">&#9632;</span>
+            {{post.date |
+                date('MMMM Do YYYY') }}
+          </span>
+          <span class="post-author-role butter-p text-charcoal">
+            {{ post.author.role }}
+          </span>
         </div>
+      </div>
+      <div class="col-lg-8 col-centered butter-p">
+        {{ post.contentHtml | safe }}
       </div>
     </div>
   </section>

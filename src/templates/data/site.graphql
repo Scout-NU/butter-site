@@ -5,6 +5,18 @@ query {
       description
       path
     }
+    instagramIcon {
+      path
+    }
+    twitterIcon {
+      path
+    }
+    facebookIcon {
+      path
+    }
+    mediumIcon {
+      path
+    }
     blogBanner {
       description
       path

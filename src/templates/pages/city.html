@@ -13,21 +13,23 @@
     ></div>
     <div class="col-lg-6 col-md-6 col-sm-12 mt-5 pr-5">
       <div class="row mb-3">
-        <h1 class="butter-h1 text-cocoa">{{ city.cityName }}</h1>
+        <h1 class="col-12 butter-h1 text-cocoa">{{ city.cityName }}</h1>
       </div>
       <div class="row mb-4">
-        <h3 class="butter-h3-muli text-charcoal">
+        <h3 class="col-8 butter-h3-muli text-charcoal">
           {{ city.cityHeader.tagline }}
         </h3>
       </div>
       <div class="row">
-        <p class="butter-p text-charcoal">{{ city.cityHeader.description }}</p>
+        <p class="col-12 butter-p text-charcoal">
+          {{ city.cityHeader.description }}
+        </p>
       </div>
     </div>
   </div>
 </div>
 <!-------Review Hits--------->
-<section class="container section">
+<section class="container-fluid section">
   <div class="row mb-5 city-title">
     <h2 class="butter-h2-lg text-dark-blue-grey">
       {{ city.reviewSection.reviewSectionTitle }}
@@ -62,59 +64,67 @@
 </section>
 
 <!-------Email Capture--------->
-<div class="section container-fluid" role="form">
-  <div class="row" id="email-capture" style="background: #06574f">
-    <div class="col-lg-6 col-md-8 col-sm-12">
-      <h3 class="butter-h2 text-light-peach" id="email-form-header">
-        Sign up for our email list!
-      </h3>
-      <form>
-        <div class="form-group email-form-group">
-          <label class="butter-p text-white">I'm interested in being:</label>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="localCheck"
-            />
-            <label class="form-check-label butter-p text-white" for="recCheck"
-              >Local</label
-            >
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="recCheck"
-            />
-            <label class="form-check-label butter-p text-white" for="recCheck"
-              >Recommender</label
-            >
-          </div>
-        </div>
-        <div class="container">
-          <label for="exampleFormControlInput1" class="butter-p text-white">
-            Email address</label
-          >
-          <div class="row">
-            <div class="col-9">
-              <div class="form-group">
+<div class="section container-fluid city-form-section city-wavy-container" role="form">
+    <div class="row" id="email-capture">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-12">
+          <h3 class="butter-h2-lg text-light-peach mb-2" id="email-form-header">
+            Sign up for our email list
+          </h3>
+          <form>
+            <div class="form-group email-form-group">
+              <span class="butter-p text-white ml-3">I'd like to be a:</span>
+              <div class="form-check">
                 <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="me@example.com"
+                  class="form-check-input"
+                  type="radio"
+                  value="local"
+                  name="email-capture-buttons"
+                  id="localCheck"
                 />
+                <label
+                  class="form-check-label butter-p text-white"
+                  for="localCheck"
+                  >Local</label
+                >
+              </div>
+              <div class="form-check ml-4">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="recommender"
+                  name="email-capture-buttons"
+                  id="recCheck"
+                />
+                <label
+                  class="form-check-label butter-p text-white"
+                  for="recCheck"
+                  >Recommender</label
+                >
               </div>
             </div>
-            <div class="col-3">
-              <button class="btn butter-btn-shaded">Tell us!</button>
+            <div class="container">
+              <label for="exampleFormControlInput1" class="butter-p text-white">
+                Email address</label
+              >
+              <div class="row">
+                <div class="col-lg-9 col-sm-12">
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="me@example.com"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                  <button class="btn butter-btn-shaded">Sign Up</button>
+                </div>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
@@ -129,7 +139,7 @@
   <div class="row no-gutters">
     {% for neighborhood in city.neighborhoodSection.neighborhoods %}
     <div
-      class="col-lg-3 col-md-4 col-sm-12 col-centered neighborhood-size"
+      class="col-lg-3 col-md-3 col-sm-12 col-centered neighborhood-size"
       id="neighborhoods"
     >
       <div class="row">
@@ -159,36 +169,39 @@
 
 <!-------The Spread--------->
 
-<section class="section container-fluid" style="background: #f2d5c7">
+<section class="section container-fluid city-spread-section city-wavy-container">
   <div class="container">
     <div class="city-titles">
-      <div class="row">
+      <div class="row mb-3">
         <h2 class="butter-h2 text-dark-blue-grey">
           {{ city.blogHighlight.spreadTitle }}
         </h2>
       </div>
-      <div class="row">
+      <div class="row mb-4">
         <h5 class="butter-h3-muli text-dark-blue-grey">A Blog by Butter</h5>
       </div>
       <div class="row">
         {% for post in city.blogHighlight.posts%}
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div class="row">
-            <img class="blog-thumbnail" src="{{ post.banner.path | image }}" />
+        <div class="col-lg-6">
+            <div
+              class="blog-thumbnail"
+              style="background-image: url({{ post.banner.path | image }})"
+              role="img"
+              aria-label="{{post.thumbnail.description}}"
+            ></div>
+            <a href="{{post | route('post') }}">
+              <h2 class="butter-h3-muli text-dark-blue-grey mt-3">{{ post.title }}</h2>
+            </a>
+            <p class="butter-p text-charcoal">{{ post.shortDescription }}</p>
           </div>
-          <div class="row">
-            <h3>{{ post.title }}</h3>
-          </div>
-          <div class="row">
-            <p>{{ post.shortDescription }}</p>
-          </div>
-        </div>
         {% endfor %}
       </div>
       <div class="row">
+          <a href="/blog">
         <button class="butter-btn butter-btn-shaded">
-          See More Posts<a href="/blog"></a>
+          See All Posts
         </button>
+      </a>
       </div>
     </div>
   </div>
