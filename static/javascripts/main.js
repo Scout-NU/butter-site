@@ -17,7 +17,8 @@ $(document).ready(function() {
     navigation: true,
     navigationPosition: "left",
     navigationTooltips: ["Top", "Roles", "Features", "Cities", "Bottom"],
-    verticalCentered: true
+    verticalCentered: true,
+    responsiveWidth: 800
   });
 });
 

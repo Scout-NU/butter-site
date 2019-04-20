@@ -1,11 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1024px" height="707px" viewBox="0 0 1024 707" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <title>Combined Shape</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="City-Desktop" transform="translate(0.000000, -2909.000000)" fill="#F2D5C7">
-            <path d="M0,3542 L0,2973 L0,2921.69175 C102,2913.23058 211.666667,2909 329,2909 C505,2909 669.5,2921.69175 796,2921.69175 C880.333333,2921.69175 956.333333,2917.46117 1024,2909 L1024,2973 L1024,3542 L1024,3595.66252 C943.666667,3606.90014 850.666667,3613.60491 745,3615.77682 C586.5,3619.03469 463,3585.63202 342,3580.35315 C261.333333,3576.8339 147.333333,3579.24912 0,3587.5988 L0,3542 Z" id="Combined-Shape"></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1408.7 613.8" style="enable-background:new 0 0 1408.7 613.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F2D5C7;}
+</style>
+<title>Combined Shape</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="City-Desktop" transform="translate(0.000000, -2909.000000)">
+		<path id="Combined-Shape" class="st0" d="M-12.5,3458.7v-492.9v-44.4c142.5-7.3,295.6-11,459.5-11c245.8,0,475.6,11,652.3,11
+			c117.8,0,223.9-3.7,318.5-11v55.4v492.9v46.5c-112.2,9.7-242.1,15.5-389.7,17.4c-221.4,2.8-393.9-26.1-562.9-30.7
+			c-112.7-3-271.9-1-477.7,6.3V3458.7z"/>
+	</g>
+</g>
 </svg>

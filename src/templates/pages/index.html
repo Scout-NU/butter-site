@@ -28,8 +28,9 @@
   <div class="section" id="section1" role="region">
     <div class="container">
       <div class="row py-3 mt-5">
+          <img id="left-phone" class="phone-mockup" src="../assets/Additional/iPhoneXmockupgreen1.png"></img>
         <div
-          class="roles-locals col-centered full-bg-img col-lg-4 col-md-9 col-sm-12"
+          class="roles-locals full-bg-img col-xl-4 col-lg-6 col-md-6 col-sm-12"
         >
           <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.locals.localsHeader }}
@@ -38,8 +39,10 @@
             {{ homepage.rolesSection.locals.localsBlurb }}
           </p>
         </div>
+        <img id="right-phone" class="phone-mockup" src="../assets/Additional/iPhoneXmockupgreen2.png"></img>
+        <div class="roles-spacer col-lg-12"></div>
         <div
-          class="roles-recommenders col-centered full-bg-img col-lg-5 col-md-12 col-sm-12"
+          class="roles-recommenders full-bg-img col-xl-5 col-lg-6 col-md-6 col-sm-12"
         >
           <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.recommenders.recommendersHeader }}
@@ -51,13 +54,13 @@
       </div>
 
       <div class="row" id="email-capture">
-        <div class="col-lg-6 col-md-8 col-sm-12">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-12">
           <h3 class="butter-h3-muli text-charcoal" id="email-form-header">
             Join the Butter community.
           </h3>
           <form>
-            <div class="form-group email-form-group ml-3">
-              <span class="butter-p text-charcoal">I'd like to be a:</span>
+            <div class="form-group email-form-group">
+              <span class="butter-p text-charcoal ml-3">I'd like to be a:</span>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -92,7 +95,7 @@
                 Email address</label
               >
               <div class="row">
-                <div class="col-9">
+                <div class="col-lg-9 col-sm-12">
                   <div class="form-group">
                     <input
                       type="email"
@@ -102,8 +105,8 @@
                     />
                   </div>
                 </div>
-                <div class="col-3">
-                  <button class="btn butter-btn-shaded">Say hey!</button>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                  <button class="btn butter-btn-shaded">Say Hey!</button>
                 </div>
               </div>
             </div>
@@ -153,7 +156,7 @@
       <!-----Cities------->
 
       <div class="section" id="section3" role="region">
-        <div class="container">
+        <div class="container cities-blurb">
           <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
           {{ homepage.citiesSection.citiesBlurbHtml | safe }}
           <div class="row cities-list">

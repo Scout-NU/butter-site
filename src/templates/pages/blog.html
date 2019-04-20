@@ -34,7 +34,8 @@
         <p class="butter-p text-charcoal">{{ site.settings.featuredBlogPost.shortDescription }}</p>
         <p class="butter-p text-charcoal">
             <strong class="text-dark-charcoal">by {{ site.settings.featuredBlogPost.author.firstName }} 
-              {{ site.settings.featuredBlogPost.author.lastName }}</strong> |
+              {{ site.settings.featuredBlogPost.author.lastName }}</strong> 
+              <span class="text-light-peach mx-1">&#9632;</span>
           {{site.settings.featuredBlogPost.date |
               date('MMMM Do YYYY') }}
         </p>
@@ -61,7 +62,8 @@
       </a>
       <p class="butter-p text-charcoal">{{ post.shortDescription }}</p>
       <p class="butter-p text-charcoal mb-5">
-        <strong class="text-dark-charcoal">by {{ post.author.firstName }} {{ post.author.lastName }}</strong> |
+        <strong class="text-dark-charcoal">by {{ post.author.firstName }} {{ post.author.lastName }}</strong> 
+        <span class="text-light-peach mx-1">&#9632;</span>
         {{post.date |
             date('MMMM Do YYYY') }}
       </p>
@@ -78,8 +80,6 @@
 </div>
 
 <!-----Footer------->
-<div class="section">
-    {% include "partials/footer.html" %}
-  </div>
+  {% include "partials/footer.html" %}
 
 {% endblock %}

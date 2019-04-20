@@ -11,8 +11,9 @@ $dark-blue-grey: #06574f;
 
 /* media breakpoints */
 $break-mobile: 540px;
-$break-tablet: 800px;
+$break-tablet: 720px;
 $break-desktop: 960px;
+$break-widescreen: 1200px;
 
 section {
   padding-top: 50px;
@@ -23,8 +24,16 @@ section {
 
 .butter-h1 {
   font-family: "PT Serif", serif;
-  font-size: 60px;
   font-weight: bold;
+  @media screen and (max-width: $break-mobile) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+    font-size: 48px;
+  }
+  @media screen and (min-width: $break-desktop) {
+    font-size: 60px;
+  }
 }
 
 .butter-h2 {
@@ -68,7 +77,6 @@ section {
 .footer-a {
   color: $dark-blue-grey;
   font-size: 14px;
-  margin-right: 50px;
   font-weight: bold;
 }
 
@@ -160,18 +168,115 @@ section {
 }
 
 #sydney-map {
-  position: absolute;
-  width: 160%;
+  @media screen and (max-width: $break-mobile) {
+    width: 100%;
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+    width: 100%;
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+    position: absolute;
+    width: 140%;
+  }
+  @media screen and (min-width: $break-desktop) {
+    position: absolute;
+    width: 160%;
+  }
+}
+
+.roles-spacer {
+  @media screen and (min-width: $break-widescreen) {
+    display: none;
+  }
 }
 
 .roles-locals {
-  padding: 90px 90px 90px 90px;
-  background-image: url("../assets/Home/TextContainer-Left.svg");
+  @media screen and (max-width: $break-mobile) {
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+  }
+  @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
+    background-image: none !important;
+  }
+  @media screen and (min-width: $break-widescreen) {
+    padding: 85px 85px 85px 85px;
+    background-image: url("../assets/Home/TextContainer-Left.svg");
+    left: 75px;
+  }
 }
 
 .roles-recommenders {
-  padding: 100px 100px 100px 100px;
-  background-image: url("../assets/Home/TextContainer-Right.svg");
+  @media screen and (max-width: $break-mobile) {
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+  }
+  @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
+    background-image: none !important;
+  }
+  @media screen and (min-width: $break-widescreen) {
+    padding: 100px 100px 100px 100px;
+    background-image: url("../assets/Home/TextContainer-Right.svg");
+    left: 130px;
+    top: 25px;
+  }
+}
+
+.phone-mockup {
+  position: absolute;
+  @media screen and (max-width: $break-mobile) {
+    display: none;
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+    display: none;
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+    width: 200px;
+  }
+  @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
+    width: 300px;
+  }
+  @media screen and (min-width: $break-widescreen) {
+    width: 300px;
+  }
+}
+
+#left-phone {
+  @media screen and (max-width: $break-mobile) {
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+    right: 10px;
+  }
+  @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
+    right: 10px;
+  }
+  @media screen and (min-width: $break-widescreen) {
+    bottom: 150px;
+    left: 125px;
+  }
+}
+
+#right-phone {
+  @media screen and (max-width: $break-mobile) {
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+    right: 120px;
+    bottom: 120px;
+  }
+  @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
+    right: 120px;
+    bottom: 90px;
+  }
+  @media screen and (min-width: $break-widescreen) {
+    right: 130px;
+  }
 }
 
 .form-check {
@@ -244,6 +349,27 @@ section {
   text-align: center;
 }
 
+#section0 {
+  @media screen and (max-width: $break-tablet) {
+    margin-top: 100px;
+  }
+}
+
+#section1 {
+  .form-check {
+    @media screen and (max-width: $break-mobile) {
+      display: block;
+      margin-left: 0px !important;
+    }
+  }
+
+  .butter-btn-shaded {
+    @media screen and (max-width: $break-mobile) {
+      display: block;
+    }
+  }
+}
+
 #section3 {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -262,6 +388,16 @@ section {
   margin-top: 80px;
 }
 
+.cities a {
+  color: $cocoa;
+  &:hover {
+    color: $cocoa;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px $cocoa dashed;
+  }
+}
+
 .city-banner {
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
@@ -270,6 +406,12 @@ section {
   background-repeat: no-repeat;
   background-position: center bottom;
   height: 600px;
+  @media screen and (max-width: $break-mobile) {
+    height: 350px;
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+    height: 400px;
+  }
 }
 
 .butter-logo {
@@ -286,7 +428,9 @@ section {
 }
 
 #email-capture {
-  justify-content: center;
+  @media screen and (min-width: $break-widescreen) {
+    justify-content: center;
+  }
 }
 
 #email-form-header {
@@ -303,7 +447,7 @@ section {
 }
 
 .footer {
-  height: 160px;
+  height: auto;
   margin-top: 30px;
   background-color: $lighter-peach;
 }
@@ -356,6 +500,9 @@ section {
 
 .value-image {
   height: 250px;
+  @media screen and (max-width: $break-mobile) {
+    height: 200px;
+  }
 }
 
 .value-text {
@@ -400,8 +547,39 @@ section {
   background-repeat: no-repeat;
 }
 
+.city-form-section {
+  height: 450px;
+  background-image: url("../assets/City/FormContainer.svg");
+  padding-top: 130px;
+}
+
+.city-spread-section {
+  height: auto;
+  background-image: url("../assets/City/SpreadContainer.svg");
+  padding-bottom: 60px;
+}
+
+.city-wavy-container {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .author-icon {
-  height: 75px;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.post-author-info {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.post-author-role {
+  display: block;
 }
 
 .blog-featured-tag {
@@ -457,18 +635,6 @@ section {
   @media screen and (min-width: $break-desktop) {
     min-width: 180px;
     max-width: 230px;
-  }
-}
-
-.neighborhood-size {
-  @media screen and (max-width: $break-mobile) {
-    min-width: 274px;
-  }
-  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
-    max-width: 180px;
-  }
-  @media screen and (min-width: $break-desktop) {
-    max-width: 299px;
   }
 }
 
@@ -540,7 +706,30 @@ ul {
 
 @media (max-width: 991.98px) {
   .section {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
+}
+
+/* Navbar */
+
+.navbar-custom {
+  background-color: $lighter-peach;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: $cocoa;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: $cocoa;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: $cocoa;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px $cocoa dashed;
 }
