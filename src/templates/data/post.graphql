@@ -2,6 +2,11 @@ query {
   posts: getBlogPostList {
     total
     items {
+      meta {
+        description
+        imageUrl
+        title
+      }
       _id
       author {
         _id

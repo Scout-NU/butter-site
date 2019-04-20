@@ -1,5 +1,18 @@
-{% extends "layouts/default.html" %} {% block content %}
-
+{% extends "layouts/default.html" %} {% block meta %}
+<title>{{ post.meta.title }} | The Spread | Butter</title>
+<meta name="description" content="{{ post.meta.description }}" />
+<meta
+  property="og:url"
+  content="http://www.discoverbutter.co{{post | route('post') }}"
+/>
+<meta property="og:type" content="website" />
+<meta
+  property="og:title"
+  content="{{ post.meta.title }} | The Spread | Butter"
+/>
+<meta property="og:description" content="{{ post.meta.description }}" />
+<meta property="og:image" content="{{ post.meta.imageUrl }}" />
+{% endblock %} {% block content %}
 <div class="nav-spacer"></div>
 <article>
   <div
@@ -10,7 +23,7 @@
   >
     <div class="container-fluid">
       <div class="row">
-        <h1 class="offset-lg-2 col-lg-6 butter-h1 text-white">
+        <h1 id="page-title" class="offset-lg-2 col-lg-6 butter-h1 text-white">
           {{ post.title }}
         </h1>
       </div>
@@ -49,4 +62,5 @@
 <div class="section">
   {% include "partials/footer.html" %}
 </div>
+<script type="text/javascript" src="../../dist/bundle.js"></script>
 {% endblock %}

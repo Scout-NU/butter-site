@@ -5,6 +5,11 @@ query {
       description
       path
     }
+    blogMeta {
+      description
+      imageUrl
+      title
+    }
     instagramIcon {
       path
     }

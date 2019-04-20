@@ -1,7 +1,13 @@
 query {
   homepage: getHomepage {
+    meta {
+      description
+      imageUrl
+      title
+    }
     _id
     citiesSection {
+      yourCityLink
       citiesBlurb
       citiesBlurbHtml
     }

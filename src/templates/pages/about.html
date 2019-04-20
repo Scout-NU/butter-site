@@ -1,4 +1,12 @@
-{% extends "layouts/default.html" %} {% block content %}
+{% extends "layouts/default.html" %} {% block meta %}
+<title>{{ about.meta.title }} | Butter</title>
+<meta name="description" content="{{ about.meta.description }}" />
+<meta property="og:url" content="http://www.discoverbutter.co/about" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ about.meta.title }} | Butter" />
+<meta property="og:description" content="{{ about.meta.description }}" />
+<meta property="og:image" content="{{ about.meta.imageUrl }}" />
+{% endblock %} {% block content %}
 <div class="nav-spacer"></div>
 
 <!-----Header------>
@@ -12,7 +20,7 @@
     <!-- <div class="butter-hero overlay background-cocoa"></div> -->
     <div class="container-fluid">
       <div class="row">
-        <h1 class="offset-lg-1 col-lg-6 butter-h1 text-white">
+        <h1 id="page-title" class="offset-lg-1 col-lg-6 butter-h1 text-white">
           {{ about.headerSection.headerTitle }}
         </h1>
       </div>
@@ -89,7 +97,7 @@
           src="{{ teamMember.userImage.path | image }}"
           alt="{{ teamMember.userImage.description }}"
         />
-        <p class="butter-h3-muli text-charcoal mt-3 mb-1">
+        <p class="butter-h3-muli text-dark-blue-grey mt-3 mb-1">
           <strong
             >{{ teamMember.firstName }} <br />
             {{ teamMember.lastName }}</strong
@@ -137,8 +145,7 @@
       <div class="form-group col-lg-12 col-centered">
         <form
           name="contact-form"
-          method="post"
-          action="https://formspree.io/andersonian21@gmail.com"
+          action="https://formspree.io/hello@discoverbutter.co"
           method="POST"
           class="block full-width"
         >
@@ -167,7 +174,7 @@
               maxlength="2000"
             ></textarea>
           </div>
-          <button class="btn btn-primary">Submit</button>
+          <button class="butter-btn butter-btn-light">Submit</button>
         </form>
       </div>
     </div>
@@ -178,5 +185,7 @@
 <div class="section">
   {% include "partials/footer.html" %}
 </div>
+
+<script type="text/javascript" src="../dist/bundle.js"></script>
 
 {% endblock %}

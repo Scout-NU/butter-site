@@ -74,6 +74,12 @@ section {
   }
 }
 
+.butter-city-text {
+  font-family: "PT Serif", serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .footer-a {
   color: $dark-blue-grey;
   font-size: 14px;
@@ -333,6 +339,12 @@ section {
   transform: scale(1);
 }
 
+.feature-image-container {
+  @media screen and (max-width: $break-tablet) {
+    display: none;
+  }
+}
+
 .feature-image {
   width: 50%;
   border-radius: 50%;
@@ -381,7 +393,7 @@ section {
 }
 
 .city-icon {
-  height: 100px;
+  height: 150px;
 }
 
 .cities-list {
@@ -411,6 +423,9 @@ section {
   }
   @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
     height: 400px;
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+    height: 470px;
   }
 }
 
@@ -453,7 +468,7 @@ section {
 }
 
 .butter-hero {
-  height: 350px !important;
+  height: 450px !important;
   justify-content: center;
 }
 
@@ -590,16 +605,7 @@ section {
   font-weight: normal;
 }
 
-.blog-thumbnail {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 300px;
-}
-
+.blog-thumbnail,
 .blog-featured-thumbnail {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -607,6 +613,17 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  &:hover {
+    background-color: rgba(6, 87, 79, 0.7);
+    background-blend-mode: multiply;
+  }
+}
+
+.blog-thumbnail {
+  height: 300px;
+}
+
+.blog-featured-thumbnail {
   height: 500px;
 }
 
@@ -691,7 +708,8 @@ ul {
 }
 
 .pagination a:not(.is-disabled):not(.is-current):hover {
-  box-shadow: inset 0 0 0 2px $light-peach;
+  color: $light-peach;
+  font-weight: bold;
 }
 
 .pagination a.is-current {

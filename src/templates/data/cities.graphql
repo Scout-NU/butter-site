@@ -1,71 +1,76 @@
-query{
+query {
   city: getCityList {
     total
     items {
-      _id
-    blogHighlight {
-      posts {
-        _id
-        banner {
-          _id
-          description
-          path
-        }
-        shortDescription
-        title
-      }
-      spreadTitle
-    }
-    cityHeader {
-      bannerImage {
-        _id
+      meta {
         description
-        path
-      }
-      description
-      tagline
-    }
-    cityName
-    neighborhoodSection {
-      neighborhoods {
-        neighborhoodBody
-        neighborhoodPhoto {
-          _id
-          description
-          path
-        }
-        neighborhoodTitle
-      }
-      neighborhoodSectionTitle
-    }
-    reviewSection {
-      reviews {
-        _id
-        image {
-          _id
-          description
-          path
-        }
-        statement
-        tag {
-          ... on Location {
-            _id
-            Location_name: name
-          }
-          ... on Tags {
-            _id
-            Tags_tagName: tagName
-          }
-        }
+        imageUrl
         title
-        user {
-          _id
-          firstName
-          role
-        }
       }
-      reviewSectionTitle
-    }
+      _id
+      blogHighlight {
+        posts {
+          _id
+          banner {
+            _id
+            description
+            path
+          }
+          shortDescription
+          title
+        }
+        spreadTitle
+      }
+      cityHeader {
+        bannerImage {
+          _id
+          description
+          path
+        }
+        description
+        tagline
+      }
+      cityName
+      neighborhoodSection {
+        neighborhoods {
+          neighborhoodBody
+          neighborhoodPhoto {
+            _id
+            description
+            path
+          }
+          neighborhoodTitle
+        }
+        neighborhoodSectionTitle
+      }
+      reviewSection {
+        reviews {
+          _id
+          image {
+            _id
+            description
+            path
+          }
+          statement
+          tag {
+            ... on Location {
+              _id
+              Location_name: name
+            }
+            ... on Tags {
+              _id
+              Tags_tagName: tagName
+            }
+          }
+          title
+          user {
+            _id
+            firstName
+            role
+          }
+        }
+        reviewSectionTitle
+      }
     }
   }
 }
