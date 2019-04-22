@@ -13,51 +13,74 @@
 <meta property="og:description" content="{{ post.meta.description }}" />
 <meta property="og:image" content="{{ post.meta.imageUrl }}" />
 {% endblock %} {% block content %}
-<div class="nav-spacer"></div>
-<article>
-  <div
-    class="butter-hero dark-blue-grey-overlay bg-image d-flex align-items-end"
-    style="background-image: url({{ post.banner.path | image }})"
-    role="img"
-    aria-label="{{ post.banner.description }}"
-  >
-    <div class="container-fluid">
-      <div class="row">
-        <h1 id="page-title" class="offset-lg-2 col-lg-6 butter-h1 text-white">
-          {{ post.title }}
-        </h1>
-      </div>
-    </div>
-  </div>
-  <section class="container blogpost-body">
-    <div class="row">
-      <div class="col-lg-8 col-centered my-3">
-        <img
-          class="circle-image author-icon"
-          src="{{ post.author.userImage.path | image }}"
-          alt="{{ post.author.userImage.description }}"
-        />
-        <div class="post-author-info">
-          <span class="butter-p text-charcoal">
-            <strong class="text-dark-charcoal"
-              >{{ post.author.firstName }} {{ post.author.lastName }}</strong
-            >
-            <span class="text-light-peach mx-1">&#9632;</span>
-            {{post.date |
-                date('MMMM Do YYYY') }}
-          </span>
-          <span class="post-author-role butter-p text-charcoal">
-            {{ post.author.role }}
-          </span>
+
+<div id="blog-post-bg" class="linework">
+  <div class="nav-spacer"></div>
+  <article>
+    <div
+      class="butter-hero dark-blue-grey-overlay bg-image d-flex align-items-end"
+      style="background-image: url({{ post.banner.path | image }})"
+      role="img"
+      aria-label="{{ post.banner.description }}"
+    >
+      <div class="container-fluid">
+        <div class="row">
+          <h1 id="page-title" class="offset-lg-2 col-lg-6 butter-h1 text-white">
+            {{ post.title }}
+          </h1>
         </div>
       </div>
-      <div class="col-lg-8 col-centered butter-p">
-        {{ post.contentHtml | safe }}
-      </div>
     </div>
-  </section>
-</article>
+    <section class="container blogpost-body">
+      <div class="row">
+        <div class="col-lg-8 col-centered my-3">
+          <img
+            class="circle-image author-icon"
+            src="{{ post.author.userImage.path | image }}"
+            alt="{{ post.author.userImage.description }}"
+          />
+          <div class="post-author-info">
+            <span class="butter-p text-charcoal">
+              <strong class="text-dark-charcoal"
+                >{{ post.author.firstName }} {{ post.author.lastName }}</strong
+              >
+              <span class="text-light-peach mx-1">&#9632;</span>
+              {{post.date |
+                date('MMMM Do YYYY') }}
+            </span>
+            <span class="post-author-role butter-p text-charcoal">
+              {{ post.author.role }}
+            </span>
+          </div>
+        </div>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>
+          (function(d, s, id) {
+            var js,
+              fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src =
+              "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          })(document, "script", "facebook-jssdk");
+        </script>
 
+        <!-- Your share button code -->
+        <div
+          class="fb-share-button"
+          data-href="https://www.your-domain.com/your-page.html"
+          data-layout="button_count"
+        ></div>
+        <div class="col-lg-8 col-centered butter-p">
+          {{ post.contentHtml | safe }}
+        </div>
+      </div>
+    </section>
+  </article>
+</div>
 <!-----Footer------->
 <div class="section">
   {% include "partials/footer.html" %}

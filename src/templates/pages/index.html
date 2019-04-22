@@ -1,11 +1,11 @@
 {% extends "layouts/default.html" %}
 
 {% block meta %}
-<title>{{ homepage.meta.title }} | Butter</title>
+<title>Butter | {{ homepage.meta.title }}</title>
 <meta name="description" content="{{homepage.meta.description}}"/>
 <meta property="og:url"           content="http://www.discoverbutter.co/" />
 <meta property="og:type"          content="website" />
-<meta property="og:title"         content="{{homepage.meta.title}} | Butter" />
+<meta property="og:title"         content="Butter | {{homepage.meta.title}}" />
 <meta property="og:description"   content="{{homepage.meta.description}}" />
 <meta property="og:image"         content="{{homepage.meta.imageUrl}}" />
 {% endblock %}
@@ -171,37 +171,45 @@
 
       <!-----Cities------->
 
-      <div class="section" id="section3" role="region">
+      <div class="section linework" id="section3" role="region">
         <div class="container cities-blurb cities">
           <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
           {{ homepage.citiesSection.citiesBlurbHtml | safe }}
           <div class="row cities-list">
             {% for city in cities.items %}
             <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+              <div class="row mt-5">
               <img
-                class="city-icon"
+                class="city-icon col-6"
                 src="{{ city.icon.path | image }}"
                 alt="{{ city.icon.description }}"
               />
+              <div class="col-6 py-5">
               <a
                 href="/cities/{{ city.cityName }}"
                 class="butter-city-text mx-3 text-cocoa butter-a"
                 >{{ city.cityName }}</a
               >
+                </div>
+              </div>
             </div>
             {% endfor %}
             <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                <div class="row mt-5">
                 <img
-                  class="city-icon"
-                  src="../assets/Icons/buildings.png"
+                  class="city-icon col-6"
+                  src="../assets/Icons/iconsButter-03.svg"
                   alt="Icon of buildings"
                 />
+                <div class="col-6 py-5">
                 <a
                   href="{{homepage.citiesSection.yourCityLink}}"
                   class="butter-city-text mx-3 text-cocoa butter-a"
                   >Your City</a
                 >
+                </div>
               </div>
+            </div>
           </div>
         </div>
       </div>

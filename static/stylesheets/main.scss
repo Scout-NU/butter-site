@@ -207,9 +207,10 @@ section {
     background-image: none !important;
   }
   @media screen and (min-width: $break-widescreen) {
-    padding: 85px 85px 85px 85px;
+    padding: 100px 90px 0px 60px;
     background-image: url("../assets/Home/TextContainer-Left.svg");
-    left: 75px;
+    left: 90px;
+    height: 360px;
   }
 }
 
@@ -262,8 +263,8 @@ section {
     right: 10px;
   }
   @media screen and (min-width: $break-widescreen) {
-    bottom: 150px;
-    left: 125px;
+    bottom: 160px;
+    left: 150px;
   }
 }
 
@@ -281,7 +282,7 @@ section {
     bottom: 90px;
   }
   @media screen and (min-width: $break-widescreen) {
-    right: 130px;
+    right: 110px;
   }
 }
 
@@ -382,18 +383,55 @@ section {
   }
 }
 
-#section3 {
+.linework {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+#section3 {
   background-image: url("../assets/LineWork/Homepage Desktoplinework_bottom.svg");
 }
 
+#about-bg {
+  @media screen and (min-width: $break-desktop) {
+    background-image: url("../assets/LineWork/About Desktoplinework.svg");
+  }
+}
+
+#city-bg {
+  @media screen and (min-width: $break-desktop) {
+    background-image: url("../assets/LineWork/City Desktoplinework.svg");
+  }
+}
+
+#blog-bg {
+  @media screen and (min-width: $break-desktop) {
+    background-image: url("../assets/LineWork/spreadUIdesktoplinework.svg");
+  }
+}
+
+#blog-bg-bottom {
+  @media screen and (min-width: $break-desktop) {
+    height: 250px;
+    background-image: url("../assets/LineWork/spreadUIdesktoplinework_bottom.svg");
+  }
+}
+
+#blog-post-bg {
+  @media screen and (min-width: $break-desktop) {
+    background-image: url("../assets/LineWork/articleUIdesktoplinework.svg");
+  }
+}
 .city-icon {
-  height: 150px;
+  width: 175px;
+}
+
+.align-bottom {
+  vertical-align: bottom;
 }
 
 .cities-list {
@@ -606,7 +644,8 @@ section {
 }
 
 .blog-thumbnail,
-.blog-featured-thumbnail {
+.blog-featured-thumbnail,
+.instagram-thumbnail {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -616,6 +655,28 @@ section {
   &:hover {
     background-color: rgba(6, 87, 79, 0.7);
     background-blend-mode: multiply;
+  }
+}
+.instagram-thumbnail {
+  @media screen and (max-width: $break-mobile) {
+    height: 250px;
+    width: 250px;
+  }
+  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
+    height: 250px;
+    width: 250px;
+  }
+  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+    height: 250px;
+    width: 250px;
+  }
+  @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
+    height: 150px;
+    width: 150px;
+  }
+  @media screen and (min-width: $break-widescreen) {
+    height: 150px;
+    width: 150px;
   }
 }
 
@@ -750,4 +811,8 @@ ul {
   font-weight: bold;
   text-decoration: none;
   border-bottom: 1px $cocoa dashed;
+}
+
+.navbar-toggler {
+  border: none;
 }

@@ -1,5 +1,5 @@
 query {
-  posts: getBlogPostList {
+  posts: getBlogPostList(sort: [{ field: "date", order: "desc" }]) {
     total
     items {
       meta {

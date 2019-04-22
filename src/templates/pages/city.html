@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-
+<div id="city-bg" class="linework">
 <div class="container nav-spacer"></div>
 
 <!------- Header--------->
@@ -224,6 +224,25 @@
 </section>
 
 <!-------Instagram--------->
+
+<section class="section">
+    <div class="container">
+        <h2 class="butter-h2 text-dark-blue-grey">
+            Instagram
+          </h2>
+      <div class="row">
+          {% for post in city.instagram %}
+          <div class="col-xl-2 col-lg-3 col-md-6 col-6 my-2">
+            <a href="{{post.post.url}}">
+              <div class="instagram-thumbnail" style="background-image: url({{post.post.image.path | image}})">
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
 
 <!------Footer------>
 <div class="section">

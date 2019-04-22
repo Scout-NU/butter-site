@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="314px" height="303px" viewBox="0 0 314 303" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="350px" height="243px" viewBox="0 0 350 243" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <title>Oval Copy 4</title>
+    <title>Oval Copy 5</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M301.854155,988.739065 C380.830874,988.739065 470,933.595094 470,854.821606 C470,776.048119 423.567225,713 344.590506,713 C265.613787,713 184,776.048119 184,854.821606 C184,933.595094 222.877435,988.739065 301.854155,988.739065 Z" id="path-1"></path>
-        <filter x="-8.2%" y="-6.7%" width="116.4%" height="117.0%" filterUnits="objectBoundingBox" id="filter-2">
+        <path d="M287.817701,942.852761 C367.883905,957.229763 475.647757,949.87659 475.647757,871.885603 C475.647757,793.894615 416.401783,770.000514 337.447276,742.21745 C258.49277,714.434385 153,751.188647 153,829.179635 C153,907.170622 207.751497,928.47576 287.817701,942.852761 Z" id="path-1"></path>
+        <filter x="-7.3%" y="-8.6%" width="114.6%" height="121.8%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0.57254902   0 0 0 0 0.345098039   0 0 0 0 0.258823529  0 0 0 0.6 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Homepage-Desktop" transform="translate(-170.000000, -704.000000)">
-            <g id="Oval-Copy-4">
+        <g id="Homepage-Desktop" transform="translate(-139.000000, -724.000000)">
+            <g id="Oval-Copy-5">
                 <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
                 <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
             </g>

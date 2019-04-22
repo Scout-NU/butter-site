@@ -43,6 +43,14 @@ query {
         }
         neighborhoodSectionTitle
       }
+      instagram {
+        post {
+          image {
+            path
+          }
+          url
+        }
+      }
       reviewSection {
         reviews {
           _id

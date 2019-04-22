@@ -11,7 +11,7 @@
 {% endblock %} 
 
 {% block content %}
-
+<div id="blog-bg" class="linework">
 <div class="nav-spacer"></div>
 
 <!-----Header----->
@@ -89,11 +89,12 @@
     {% endfor %}
   </section>
 
-  <div class="container">
+  <div class="container-fluid linework" id="blog-bg-bottom">
     <div class="row">
       {% include "partials/pagination.html" %}
     </div>
   </div>
+</div>
 </div>
 
 <!-----Footer------->
