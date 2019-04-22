@@ -1,13 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1024px" height="4481px" viewBox="0 0 1024 4481" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <title>City Desktoplinework</title>
-    <desc>Created with Sketch.</desc>
-    <g id="City-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect fill="#FFFFFF" x="0" y="0" width="1024" height="4481"></rect>
-        <path d="M944,2748 C1022.48381,3059.75978 1050.75261,3271.69556 1028.80639,3383.80736 C1006.86017,3495.91916 978.591373,3627.3167 944,3778" id="Path-5-Copy" stroke="#935841" stroke-dasharray="15" transform="translate(990.000000, 3263.000000) scale(-1, 1) translate(-990.000000, -3263.000000) "></path>
-        <path d="M66.1389183,4343 C94.9077353,4272.76898 -24.297409,4159.11762 -2.26548059,3801.79645 C23.1392543,3389.77397 47.5610812,3069.17515 71,2840" id="Line-2-Copy-10" stroke="#925842" stroke-linecap="square" stroke-dasharray="15" transform="translate(33.000000, 3591.500000) scale(-1, 1) translate(-33.000000, -3591.500000) "></path>
-        <path d="M404.840513,944.790112 C333.9225,1000.19734 -103.596388,1317.94827 -160.202147,1452.76458 C-184.740739,1511.20744 -282.489791,1470.28926 -351.521082,1517.99437 C-421.568704,1566.40184 -509.289273,1608.936 -614.68279,1645.59685 C-466.255245,1502.98769 -378.335758,1422.21696 -350.924328,1403.28468 C17.891205,1148.55439 21.1523645,935.986329 294.454401,803.502331 C567.756437,671.018332 469.338879,894.398466 404.840513,944.790112 Z" id="Line-2-Copy-10" stroke="#925842" stroke-linecap="square" stroke-dasharray="15" transform="translate(-69.160070, 1203.846466) rotate(-52.000000) translate(69.160070, -1203.846466) "></path>
-        <path d="M1292.85158,-80.9133134 C1273.31689,13.1173134 1246.54152,126.506924 1204.35836,209.616087 C1135.19032,345.890785 958.133204,366.366717 831.353612,342.537924" id="Line-2-Copy-9" stroke="#925842" stroke-linecap="square" stroke-dasharray="15" transform="translate(1062.102594, 135.083412) rotate(124.000000) translate(-1062.102594, -135.083412) "></path>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 4481" style="enable-background:new 0 0 1024 4481;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#935841;stroke-width:0.899;stroke-dasharray:13.4843;}
+	.st2{fill:none;stroke:#925842;stroke-width:0.899;stroke-linecap:square;stroke-dasharray:13.4843;}
+</style>
+<title>City Desktoplinework</title>
+<desc>Created with Sketch.</desc>
+<g id="City-Desktop">
+	<rect y="-33" class="st0" width="1024" height="3621.2"/>
+	<path id="Path-5-Copy" class="st1" d="M1036,2187.7c-78.5,251.9-106.8,423.2-84.8,513.8c21.9,90.6,50.2,196.8,84.8,318.6"/>
+	<path id="Line-2-Copy-10" class="st2" d="M-0.1,3476.6c-28.8-56.8,90.4-148.6,68.4-437.4c-25.4-333-49.8-592-73.3-777.2"/>
+	<path id="Line-2-Copy-10_1_" class="st2" d="M18.5,509.1c0,72.7-19,509.4,52.4,612.6c30.9,44.7-61.5,86.6-66.4,154.3
+		c-5,68.7-25.5,145.7-61.5,231.1c-21-165.5-30.5-261.6-28.6-288.5c26.3-361.6-139.2-469.4-75.3-709.4S18.5,442.9,18.5,509.1z"/>
+	<path id="Line-2-Copy-9" class="st2" d="M1112.1,328.3c-67-55.6-146.1-124.8-191.4-190.6c-74.3-107.9,7.7-235.8,98.4-310"/>
+</g>
 </svg>

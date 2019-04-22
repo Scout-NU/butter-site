@@ -1,5 +1,17 @@
-{% extends "layouts/default.html" %} {% block content %}
+{% extends "layouts/default.html" %} 
 
+{% block meta %}
+<title>{{ city.meta.title }} | Butter</title>
+<meta name="description" content="{{ city.meta.description }}" />
+<meta property="og:url" content="http://www.discoverbutter.co/cities/{{city.cityName}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ city.meta.title }} | Butter" />
+<meta property="og:description" content="{{ city.meta.description }}" />
+<meta property="og:image" content="{{ city.meta.imageUrl }}" />
+{% endblock %}
+
+{% block content %}
+<div id="city-bg" class="linework">
 <div class="container nav-spacer"></div>
 
 <!------- Header--------->
@@ -13,7 +25,7 @@
     ></div>
     <div class="col-lg-6 col-md-6 col-sm-12 mt-5 pr-5">
       <div class="row mb-3">
-        <h1 class="col-12 butter-h1 text-cocoa">{{ city.cityName }}</h1>
+        <h1 id="page-title" class="col-12 butter-h1 text-cocoa">{{ city.cityName }}</h1>
       </div>
       <div class="row mb-4">
         <h3 class="col-8 butter-h3-muli text-charcoal">
@@ -70,7 +82,10 @@
           <h3 class="butter-h2-lg text-light-peach mb-2" id="email-form-header">
             Sign up for our email list
           </h3>
-          <form>
+          <form
+          name="email-signup-{{city.cityName}}"
+          action="https://formspree.io/hello@discoverbutter.co"
+          method="POST">
             <div class="form-group email-form-group">
               <span class="butter-p text-white ml-3">I'd like to be a:</span>
               <div class="form-check">
@@ -111,6 +126,7 @@
                   <div class="form-group">
                     <input
                       type="email"
+                      name="email"
                       class="form-control"
                       id="exampleFormControlInput1"
                       placeholder="me@example.com"
@@ -208,6 +224,25 @@
 </section>
 
 <!-------Instagram--------->
+
+<section class="section">
+    <div class="container">
+        <h2 class="butter-h2 text-dark-blue-grey">
+            Instagram
+          </h2>
+      <div class="row">
+          {% for post in city.instagram %}
+          <div class="col-xl-2 col-lg-3 col-md-6 col-6 my-2">
+            <a href="{{post.post.url}}">
+              <div class="instagram-thumbnail" style="background-image: url({{post.post.image.path | image}})">
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
 
 <!------Footer------>
 <div class="section">

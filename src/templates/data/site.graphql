@@ -5,6 +5,11 @@ query {
       description
       path
     }
+    blogMeta {
+      description
+      imageUrl
+      title
+    }
     instagramIcon {
       path
     }
@@ -15,6 +20,9 @@ query {
       path
     }
     mediumIcon {
+      path
+    }
+    hamburger {
       path
     }
     blogBanner {

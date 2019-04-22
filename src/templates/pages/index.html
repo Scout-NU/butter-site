@@ -1,4 +1,16 @@
-{% extends "layouts/default.html" %} {% block content %}
+{% extends "layouts/default.html" %}
+
+{% block meta %}
+<title>Butter | {{ homepage.meta.title }}</title>
+<meta name="description" content="{{homepage.meta.description}}"/>
+<meta property="og:url"           content="http://www.discoverbutter.co/" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Butter | {{homepage.meta.title}}" />
+<meta property="og:description"   content="{{homepage.meta.description}}" />
+<meta property="og:image"         content="{{homepage.meta.imageUrl}}" />
+{% endblock %}
+
+{% block content %}
 
 <div id="fullpage">
   <!-----Hero------->
@@ -6,10 +18,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12">
-          <h1 class="mb-5 butter-h1 text-cocoa">
+          <h1 id="page-title" class="mb-5 butter-h1 text-cocoa">
             {{ homepage.hero.heroHeaderHtml | safe }}
           </h1>
-          <p class="butter-p text-charcoal">{{ homepage.hero.heroBlurb }}</p>
+          <p id ="page-desc" class="butter-p text-charcoal">{{ homepage.hero.heroBlurb }}</p>
           <a
             href="#roles"
             class="butter-btn butter-btn-light btn-light-hover mt-3"
@@ -30,7 +42,7 @@
       <div class="row py-3 mt-5">
           <img id="left-phone" class="phone-mockup" src="../assets/Additional/iPhoneXmockupgreen1.png"></img>
         <div
-          class="roles-locals full-bg-img col-xl-4 col-lg-6 col-md-6 col-sm-12"
+          class="roles-locals full-bg-img col-xl-5 col-lg-6 col-md-6 col-sm-12"
         >
           <h2 class="butter-h2 text-cocoa">
             {{ homepage.rolesSection.locals.localsHeader }}
@@ -58,7 +70,10 @@
           <h3 class="butter-h3-muli text-charcoal" id="email-form-header">
             Join the Butter community.
           </h3>
-          <form>
+          <form
+          name="email-signup-homepage"
+          action="https://formspree.io/hello@discoverbutter.co"
+          method="POST">
             <div class="form-group email-form-group">
               <span class="butter-p text-charcoal ml-3">I'd like to be a:</span>
               <div class="form-check">
@@ -99,6 +114,7 @@
                   <div class="form-group">
                     <input
                       type="email"
+                      name="email address"
                       class="form-control"
                       id="exampleFormControlInput1"
                       placeholder="me@example.com"
@@ -127,7 +143,7 @@
           <div class="row" id="feature-buttons">
             {% for feature in homepage.featuresSection.featureList %} {% set
             index = loop.index0 %}
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-sm-2 mb-2">
               <button
                 id="feature-button{{ index }}"
                 class="butter-btn butter-btn-transparent feature-button"
@@ -139,7 +155,7 @@
             {% endfor %}
           </div>
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-5">
+            <div class="feature-image-container col-lg-6 col-md-6 col-sm-12 text-center mt-5">
               <div
                 class="feature-image-blob full-bg-img"
               >
@@ -155,25 +171,45 @@
 
       <!-----Cities------->
 
-      <div class="section" id="section3" role="region">
-        <div class="container cities-blurb">
+      <div class="section linework" id="section3" role="region">
+        <div class="container cities-blurb cities">
           <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
           {{ homepage.citiesSection.citiesBlurbHtml | safe }}
           <div class="row cities-list">
             {% for city in cities.items %}
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+              <div class="row mt-5">
               <img
-                class="city-icon"
+                class="city-icon col-6"
                 src="{{ city.icon.path | image }}"
                 alt="{{ city.icon.description }}"
               />
+              <div class="col-6 py-5">
               <a
                 href="/cities/{{ city.cityName }}"
-                class="butter-h2 mx-3 text-cocoa butter-a"
+                class="butter-city-text mx-3 text-cocoa butter-a"
                 >{{ city.cityName }}</a
               >
+                </div>
+              </div>
             </div>
             {% endfor %}
+            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                <div class="row mt-5">
+                <img
+                  class="city-icon col-6"
+                  src="../assets/Icons/iconsButter-03.svg"
+                  alt="Icon of buildings"
+                />
+                <div class="col-6 py-5">
+                <a
+                  href="{{homepage.citiesSection.yourCityLink}}"
+                  class="butter-city-text mx-3 text-cocoa butter-a"
+                  >Your City</a
+                >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -181,6 +217,7 @@
       <div class="fp-auto-height section" id="section4">
         {% include "partials/footer.html" %}
       </div>
+      <script type="text/javascript" src="../dist/bundle.js"></script>
 
       {% endblock %}
     </div>

@@ -1,7 +1,13 @@
 query {
   homepage: getHomepage {
+    meta {
+      description
+      imageUrl
+      title
+    }
     _id
     citiesSection {
+      yourCityLink
       citiesBlurb
       citiesBlurbHtml
     }
@@ -46,7 +52,7 @@ query {
     }
     title
   }
-  cities: getCityList {
+  cities: getCityList(sort: [{ field: "cityName", order: "asc" }]) {
     total
     items {
       cityName

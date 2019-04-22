@@ -18,9 +18,23 @@ $(document).ready(function() {
     navigationPosition: "left",
     navigationTooltips: ["Top", "Roles", "Features", "Cities", "Bottom"],
     verticalCentered: true,
-    responsiveWidth: 800
+    autoScrolling: false,
+    fitToSection: false
   });
+
+  // let title = $("#page-title").text() + " | Butter";
+  // let desc = $("#page-desc").text();
+  // $(document).prop("title", title);
+  // $(document).prop("title", title);
 });
+
+global.initialize = function() {
+  let args = arguments;
+  let s = args[0];
+  if (s) {
+    getFeatureList(s);
+  }
+};
 
 // stores feature list as global variable and updates content on page via jquery
 global.getFeatureList = function(s) {
@@ -70,5 +84,3 @@ global.changeFeature = function(num) {
   }
   currentFeature = num;
 };
-
-console.log("hi");
