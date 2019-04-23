@@ -152,10 +152,10 @@
       {{ city.neighborhoodSection.neighborhoodSectionTitle }}
     </h2>
   </div>
-  <div class="row no-gutters">
+  <div class="row">
     {% for neighborhood in city.neighborhoodSection.neighborhoods %}
     <div
-      class="col-lg-3 col-md-3 col-sm-12 col-centered neighborhood-size"
+      class="col-lg-4 col-md-4 col-sm-12 neighborhood-size px-5 my-2
       id="neighborhoods"
     >
       <div class="row">
@@ -199,12 +199,14 @@
       <div class="row">
         {% for post in city.blogHighlight.posts%}
         <div class="col-lg-6">
+            <a href="{{post | route('post') }}">
             <div
               class="blog-thumbnail"
               style="background-image: url({{ post.banner.path | image }})"
               role="img"
               aria-label="{{post.thumbnail.description}}"
             ></div>
+          </a>
             <a href="{{post | route('post') }}">
               <h2 class="butter-h3-muli text-dark-blue-grey mt-3">{{ post.title }}</h2>
             </a>
@@ -212,7 +214,7 @@
           </div>
         {% endfor %}
       </div>
-      <div class="row">
+      <div class="row ml-1">
           <a href="/blog">
         <button class="butter-btn butter-btn-shaded">
           See All Posts
@@ -245,8 +247,6 @@
 </div>
 
 <!------Footer------>
-<div class="section">
   {% include "partials/footer.html" %}
-</div>
 <script type="text/javascript" src="../../dist/bundle.js"></script>
 {% endblock %}
