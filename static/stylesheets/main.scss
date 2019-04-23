@@ -242,14 +242,8 @@ section {
 
 .phone-mockup {
   position: absolute;
-  @media screen and (max-width: $break-mobile) {
+  @media screen and (max-width: $break-desktop) {
     display: none;
-  }
-  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
-    display: none;
-  }
-  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
-    width: 200px;
   }
   @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
     width: 300px;
@@ -260,37 +254,23 @@ section {
 }
 
 #left-phone {
-  @media screen and (max-width: $break-mobile) {
-  }
-  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
-  }
-  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
-    right: 10px;
-  }
   @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
     right: 10px;
   }
   @media screen and (min-width: $break-widescreen) {
-    bottom: 160px;
+    bottom: 220px;
     left: 150px;
   }
 }
 
 #right-phone {
-  @media screen and (max-width: $break-mobile) {
-  }
-  @media screen and (min-width: $break-mobile) and (max-width: $break-tablet) {
-  }
-  @media screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
-    right: 120px;
-    bottom: 120px;
-  }
   @media screen and (min-width: $break-desktop) and (max-width: $break-widescreen) {
     right: 120px;
     bottom: 90px;
   }
   @media screen and (min-width: $break-widescreen) {
     right: 110px;
+    bottom: 50px;
   }
 }
 
@@ -820,9 +800,6 @@ ul {
 
 .nav-fill {
   height: 100px;
-}
-
-.navbar-expand-md {
 }
 
 .navbar-toggler {
