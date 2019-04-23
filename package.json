@@ -1,0 +1,64 @@
+{
+  "name": "takeshape-blank-project",
+  "version": "1.0.0",
+  "description": "Blank Project - A Sample Project for TakeShape - www.takeshape.io",
+  "author": {
+    "name": "TakeShape",
+    "email": "contact@takeshape.io"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/takeshape/takeshape-demo",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/takeshape/takeshape-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/takeshape/takeshape-demo"
+  },
+  "engines": {
+    "node": ">= 8.10"
+  },
+  "scripts": {
+    "init": "tsg init",
+    "serve": "browser-sync start --server build --port 5000 --files 'build/**/*' --reload-debounce",
+    "build": "tsg build",
+    "deploy": "tsg deploy",
+    "watch:tsg": "tsg watch -W",
+    "watch": "npm-run-all --serial build && npm-run-all --continue-on-error --parallel watch:* serve",
+    "start": "npm run watch",
+    "buildjs": "browserify ./static/javascripts/main.js -o --s main > ./static/javascripts/dist/bundle.js",
+    "webpack-build": "webpack -p",
+    "webpack-watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "browser-sync": "^2.26.3",
+    "copy-webpack-plugin": "^5.0.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.5.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "sass-loader": "^7.1.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "svg-inline-loader": "^0.8.0",
+    "svg-url-loader": "^2.3.2",
+    "takeshape-cli": "^4.65.0",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-sass": "^3.4.1",
+    "fullpage.js": "^3.0.4",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "takeshape-routing": "^4.64.0"
+  }
+}

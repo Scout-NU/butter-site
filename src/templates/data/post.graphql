@@ -1,0 +1,62 @@
+query {
+  posts: getBlogPostList(sort: [{ field: "date", order: "desc" }]) {
+    total
+    items {
+      meta {
+        description
+        imageUrl
+        title
+      }
+      _id
+      author {
+        _id
+        description
+        email
+        firstName
+        lastName
+        role
+        userImage {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
+      }
+      banner {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      content
+      contentHtml
+      date
+      shortDescription
+      thumbnail {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+      title
+    }
+  }
+}

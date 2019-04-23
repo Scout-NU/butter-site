@@ -1,0 +1,105 @@
+{% extends "layouts/default.html" %} 
+
+{% block meta %}
+<title>{{ site.settings.blogMeta.title }} | Butter</title>
+<meta name="description" content="{{ site.settings.blogMeta.description }}" />
+<meta property="og:url" content="http://www.discoverbutter.co/blog/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ site.settings.blogMeta.title }} | Butter" />
+<meta property="og:description" content="{{ site.settings.blogMeta.description }}" />
+<meta property="og:image" content="{{ site.settings.blogMeta.imageUrl }}" />
+{% endblock %} 
+
+{% block content %}
+<div id="blog-bg" class="linework">
+<div class="nav-spacer"></div>
+
+<!-----Header----->
+<div
+  class="butter-hero dark-blue-grey-overlay bg-image d-flex align-items-center"
+  style="background-image: url({{ site.settings.blogBanner.path | image }})"
+  role="banner"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <h1 id="page-title" class="offset-lg-2 col-lg-4 butter-h1 text-white">
+        The Spread
+      </h1>
+    </div>
+  </div>
+</div>
+
+<!-----Featured Blog Post----->
+{% if pagination.currentPage == 1 %}
+<section class="container mt-3">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="butter-h3-muli blog-featured-tag text-white">Featured</p>
+        <a href="{{site.settings.featuredBlogPost | route('post') }}">
+        <div
+          class="blog-featured-thumbnail mb-2"
+          style="background-image: url({{ site.settings.featuredBlogPost.thumbnail.path | image }})"
+          role="img"
+          aria-label="{{post.thumbnail.description}}"
+        ></div>
+      </a>
+          <a href="{{site.settings.featuredBlogPost | route('post') }}" class="butter-featured-blog-post butter-a text-dark-blue-grey mt-3">
+            {{ site.settings.featuredBlogPost.title }}
+          </a>
+        <p class="butter-p text-charcoal">{{ site.settings.featuredBlogPost.shortDescription }}</p>
+        <p class="butter-p text-charcoal">
+            <strong class="text-dark-charcoal">by {{ site.settings.featuredBlogPost.author.firstName }} 
+              {{ site.settings.featuredBlogPost.author.lastName }}</strong> 
+              <span class="text-light-peach mx-1">&#9632;</span>
+          {{site.settings.featuredBlogPost.date |
+              date('MMMM Do YYYY') }}
+        </p>
+      </div>
+      </section>
+
+    <div class="container">
+        <hr class="blog-hr">
+     </div>
+{% endif %}
+<!-----Blog Posts----->
+<section class="container mb-0">
+  <div class="row">
+    {% for post in items %}
+    <div class="col-lg-6">
+        <a href="{{post | route('post') }}">
+      <div
+        class="blog-thumbnail mb-2"
+        style="background-image: url({{ post.thumbnail.path | image }})"
+        role="img"
+        aria-label="{{post.thumbnail.description}}"
+      ></div>
+        </a>
+      <a class="butter-h2-lg butter-a text-dark-blue-grey" href="{{post | route('post') }}">
+        {{ post.title }}
+      </a>
+      <p class="butter-p text-charcoal">{{ post.shortDescription }}</p>
+      <p class="butter-p text-charcoal mb-5">
+        <strong class="text-dark-charcoal">by {{ post.author.firstName }} {{ post.author.lastName }}</strong> 
+        <span class="text-light-peach mx-1">&#9632;</span>
+        {{post.date |
+            date('MMMM Do YYYY') }}
+      </p>
+    </div>
+
+    {% endfor %}
+  </section>
+
+  <div class="container-fluid linework" id="blog-bg-bottom">
+    <div class="row">
+      {% include "partials/pagination.html" %}
+    </div>
+  
+</div>
+</div>
+
+<!-----Footer------->
+  {% include "partials/footer.html" %}
+</div>
+  <script type="text/javascript" src="../dist/bundle.js"></script>
+
+{% endblock %}

@@ -1,0 +1,193 @@
+{% extends "layouts/default.html" %} {% block meta %}
+<title>{{ about.meta.title }} | Butter</title>
+<meta name="description" content="{{ about.meta.description }}" />
+<meta property="og:url" content="http://www.discoverbutter.co/about" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ about.meta.title }} | Butter" />
+<meta property="og:description" content="{{ about.meta.description }}" />
+<meta property="og:image" content="{{ about.meta.imageUrl }}" />
+{% endblock %} {% block content %}
+<div id="about-bg" class="linework">
+  <div class="nav-spacer"></div>
+  <!-----Header------>
+  <div id="about-header" role="banner">
+    <div
+      class="butter-hero cocoa-overlay bg-image d-flex align-items-center"
+      style="background-image: url({{
+        about.headerSection.headerImage.path | image
+      }})"
+    >
+      <!-- <div class="butter-hero overlay background-cocoa"></div> -->
+      <div class="container-fluid">
+        <div class="row">
+          <h1 id="page-title" class="offset-lg-1 col-lg-6 butter-h1 text-white">
+            {{ about.headerSection.headerTitle }}
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!----About the Founder---->
+    <div class="container about-founder" role="region">
+      <div class="row">
+        <div
+          class="col-lg-6 col-md-6 col-sm-8 pt-2"
+          style="background-color: white;"
+        >
+          <p>{{ about.founderSection.founderBlurb }}</p>
+          <img
+            id="signature"
+            src="{{ about.founderSection.signature.path | image }}"
+            alt="{{ about.founderSection.signature.description }}"
+          />
+          <p>{{ about.founderSection.founderTitle }}</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-8">
+          <div class="about-image-blob full-bg-img">
+            <img
+              class="feature-image"
+              id="featureImage"
+              src="{{ about.founderSection.founderImage.path | image }}"
+              alt="{{ about.founderSection.founderImage.description }}"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!----Values---->
+  <section id="values">
+    <div class="container">
+      <h2 class="butter-h2-lg text-dark-blue-grey">
+        {{ about.valuesSection.valuesTitle }}
+      </h2>
+      <div class="row">
+        {% for value in about.valuesSection.values %}
+        <div class="value col-lg-6">
+          <div class="row">
+            <div class="col-6">
+              <img
+                class="value-image"
+                src="{{ value.value.valueImage.path | image }}"
+                alt="{{ value.value.valueImage.description }}"
+              />
+            </div>
+            <div class="value-text col-6">
+              <h3 class="butter-h3-muli text-dark-blue-grey">
+                {{ value.value.valueTitle }}
+              </h3>
+              <p>{{ value.value.valueBody }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-----About the Team----->
+  <section id="team">
+    <div class="container">
+      <h2 class="butter-h2-lg text-dark-blue-grey">
+        {{ about.teamSection.teamTitle }}
+      </h2>
+      <div class="row">
+        {% for teamMember in about.teamSection.teamMember %}
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6 text-center mt-5">
+          <img
+            class="team-image circle-image"
+            src="{{ teamMember.userImage.path | image }}"
+            alt="{{ teamMember.userImage.description }}"
+          />
+          <p class="butter-h3-muli text-dark-blue-grey mt-3 mb-1">
+            <strong
+              >{{ teamMember.firstName }} <br />
+              {{ teamMember.lastName }}</strong
+            >
+          </p>
+          <span class="butter-p">{{ teamMember.role }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!------FAQ------>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="butter-h2-lg text-dark-blue-grey mb-2">
+        {{ about.faqSection.faqTitle }}
+      </h2>
+      <div class="row mt-5">
+        {% for faq in about.faqSection.questionAndAnswer %}
+        <div class="value col-lg-9 mb-4">
+          <p class="butter-p-muli text-charcoal my-1">
+            <strong>Q: {{ faq.question }}</strong>
+          </p>
+          <p class="butter-p-muli text-charcoal">A: {{ faq.answer }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-----Contact----->
+  <section id="contact-us">
+    <div class="container">
+      <div class="row">
+        <h1 class="col-lg-12 butter-h2 text-white">
+          {{ about.contactSection.contactTitle }}
+        </h1>
+        <p class="col-lg-5 butter-p text-white">
+          {{ about.contactSection.contactBlurb }}
+        </p>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-12 col-centered">
+          <form
+            name="contact-form"
+            action="https://formspree.io/hello@discoverbutter.co"
+            method="POST"
+            class="block full-width"
+          >
+            <div class="form-group">
+              <label class="block butter-p text-white" for="full_name"
+                >Name</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                name="full_name"
+                maxlength="50"
+              />
+            </div>
+            <div class="form-group">
+              <label class="block butter-p text-white" for="email">Email</label>
+              <input class="form-control" type="text" name="email" />
+            </div>
+            <div class="form-group">
+              <label class="block butter-p text-white" for="message"
+                >Your Message</label
+              >
+              <textarea
+                class="form-control"
+                name="message"
+                maxlength="2000"
+              ></textarea>
+            </div>
+            <button class="butter-btn butter-btn-light">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-----Footer------->
+{% include "partials/footer.html" %}
+
+<script type="text/javascript" src="../dist/bundle.js"></script>
+
+{% endblock %}

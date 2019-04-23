@@ -1,0 +1,252 @@
+{% extends "layouts/default.html" %} 
+
+{% block meta %}
+<title>{{ city.meta.title }} | Butter</title>
+<meta name="description" content="{{ city.meta.description }}" />
+<meta property="og:url" content="http://www.discoverbutter.co/cities/{{city.cityName}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ city.meta.title }} | Butter" />
+<meta property="og:description" content="{{ city.meta.description }}" />
+<meta property="og:image" content="{{ city.meta.imageUrl }}" />
+{% endblock %}
+
+{% block content %}
+<div id="city-bg" class="linework">
+<div class="container nav-spacer"></div>
+
+<!------- Header--------->
+<div class="container-fluid d-flex align-items-center" role="banner">
+  <div class="row">
+    <div
+      class="col-lg-6 col-md-6 col-sm-12 city-banner"
+      style="background-image: url({{
+        city.cityHeader.bannerImage.path | image
+      }})"
+    ></div>
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-5 pr-5">
+      <div class="row mb-3">
+        <h1 id="page-title" class="col-12 butter-h1 text-cocoa">{{ city.cityName }}</h1>
+      </div>
+      <div class="row mb-4">
+        <h3 class="col-8 butter-h3-muli text-charcoal">
+          {{ city.cityHeader.tagline }}
+        </h3>
+      </div>
+      <div class="row">
+        <p class="col-12 butter-p text-charcoal">
+          {{ city.cityHeader.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------Review Hits--------->
+<section class="container-fluid section">
+  <div class="row mb-5 city-title">
+    <h2 class="butter-h2-lg text-dark-blue-grey">
+      {{ city.reviewSection.reviewSectionTitle }}
+    </h2>
+  </div>
+  <div class="row">
+    {% for review in city.reviewSection.reviews %}
+    <div
+      class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-centered mb-5 review-size"
+    >
+      <div class="row">
+        <div
+          class="img-wrapper"
+          style="background-image: url({{ review.image.path | image }})"
+          role="img"
+          aria-label="{{ review.image.description }}"
+        ></div>
+        <h3 class="butter-h3-muli mt-2" style="color: #184238;">
+          {{ review.title }}
+        </h3>
+        {% for tag in tag %}
+        <p>{{ tag.tagName }}</p>
+        {% endfor %}
+        <p class="butter-p">{{ review.statement }}</p>
+        <p class="butter-p text-dark-blue-grey">
+          <strong>{{ review.user.firstName }},</strong> {{ review.user.role }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-------Email Capture--------->
+<div class="section container-fluid city-form-section city-wavy-container" role="form">
+    <div class="row" id="email-capture">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-12">
+          <h3 class="butter-h2-lg text-light-peach mb-2" id="email-form-header">
+            Sign up for our email list
+          </h3>
+          <form
+          name="email-signup-{{city.cityName}}"
+          action="https://formspree.io/hello@discoverbutter.co"
+          method="POST">
+            <div class="form-group email-form-group">
+              <span class="butter-p text-white ml-3">I'd like to be a:</span>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="local"
+                  name="email-capture-buttons"
+                  id="localCheck"
+                />
+                <label
+                  class="form-check-label butter-p text-white"
+                  for="localCheck"
+                  >Local</label
+                >
+              </div>
+              <div class="form-check ml-4">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="recommender"
+                  name="email-capture-buttons"
+                  id="recCheck"
+                />
+                <label
+                  class="form-check-label butter-p text-white"
+                  for="recCheck"
+                  >Recommender</label
+                >
+              </div>
+            </div>
+            <div class="container">
+              <label for="exampleFormControlInput1" class="butter-p text-white">
+                Email address</label
+              >
+              <div class="row">
+                <div class="col-lg-9 col-sm-12">
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="me@example.com"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                  <button class="btn butter-btn-shaded">Sign Up</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-------Neighborhoods--------->
+<section class="section container-fluid">
+  <div class="row mb-5 city-title">
+    <h2 class="butter-h2-lg text-dark-blue-grey">
+      {{ city.neighborhoodSection.neighborhoodSectionTitle }}
+    </h2>
+  </div>
+  <div class="row">
+    {% for neighborhood in city.neighborhoodSection.neighborhoods %}
+    <div
+      class="col-lg-4 col-md-4 col-sm-12 neighborhood-size px-5 my-2
+      id="neighborhoods"
+    >
+      <div class="row">
+        <div
+          class="img-wrapper"
+          style="background-image: url({{
+            neighborhood.neighborhoodPhoto.path | image
+          }})"
+          role="img"
+          aria-label="{{ neighborhood.neighborhoodPhoto.description }}"
+        ></div>
+      </div>
+      <div class="row">
+        <h3 class="butter-h3-muli mt-2" style="color: #184238">
+          {{ neighborhood.neighborhoodTitle }}
+        </h3>
+      </div>
+      <div class="row">
+        <p class="butter-p text-charcoal">
+          {{ neighborhood.neighborhoodBody }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-------The Spread--------->
+
+<section class="section container-fluid city-spread-section city-wavy-container">
+  <div class="container">
+    <div class="city-titles">
+      <div class="row mb-3">
+        <h2 class="butter-h2 text-dark-blue-grey">
+          {{ city.blogHighlight.spreadTitle }}
+        </h2>
+      </div>
+      <div class="row mb-4">
+        <h5 class="butter-h3-muli text-dark-blue-grey">A Blog by Butter</h5>
+      </div>
+      <div class="row">
+        {% for post in city.blogHighlight.posts%}
+        <div class="col-lg-6">
+            <a href="{{post | route('post') }}">
+            <div
+              class="blog-thumbnail"
+              style="background-image: url({{ post.banner.path | image }})"
+              role="img"
+              aria-label="{{post.thumbnail.description}}"
+            ></div>
+          </a>
+            <a href="{{post | route('post') }}">
+              <h2 class="butter-h3-muli text-dark-blue-grey mt-3">{{ post.title }}</h2>
+            </a>
+            <p class="butter-p text-charcoal">{{ post.shortDescription }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="row ml-1">
+          <a href="/blog">
+        <button class="butter-btn butter-btn-shaded">
+          See All Posts
+        </button>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------Instagram--------->
+
+<section class="section">
+    <div class="container">
+        <h2 class="butter-h2 text-dark-blue-grey">
+            Instagram
+          </h2>
+      <div class="row">
+          {% for post in city.instagram %}
+          <div class="col-xl-2 col-lg-3 col-md-6 col-6 my-2">
+            <a href="{{post.post.url}}">
+              <div class="instagram-thumbnail" style="background-image: url({{post.post.image.path | image}})">
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+<!------Footer------>
+  {% include "partials/footer.html" %}
+<script type="text/javascript" src="../../dist/bundle.js"></script>
+{% endblock %}

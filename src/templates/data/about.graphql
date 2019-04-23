@@ -1,0 +1,73 @@
+query {
+  about: getAboutPage {
+    meta {
+      description
+      imageUrl
+      title
+    }
+    _id
+    contactSection {
+      contactBlurb
+      contactTitle
+    }
+    faqSection {
+      faqTitle
+      questionAndAnswer {
+        answer
+        question
+      }
+    }
+    founderSection {
+      founderBlurb
+      founderImage {
+        _id
+        description
+        path
+      }
+      founderTitle
+      signature {
+        _id
+        description
+        path
+      }
+    }
+    headerSection {
+      headerTitle
+      headerImage {
+        _id
+        description
+        path
+      }
+    }
+    teamSection {
+      teamMember {
+        _id
+        description
+        email
+        firstName
+        lastName
+        role
+        userImage {
+          _id
+          description
+          path
+        }
+      }
+      teamTitle
+    }
+    valuesSection {
+      values {
+        value {
+          valueBody
+          valueImage {
+            _id
+            description
+            path
+          }
+          valueTitle
+        }
+      }
+      valuesTitle
+    }
+  }
+}

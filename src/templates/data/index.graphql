@@ -1,0 +1,67 @@
+query {
+  homepage: getHomepage {
+    meta {
+      description
+      imageUrl
+      title
+    }
+    _id
+    citiesSection {
+      yourCityLink
+      citiesBlurb
+      citiesBlurbHtml
+    }
+    featuresSection {
+      featureList {
+        feature {
+          blurb
+          image {
+            _id
+            caption
+            credit
+            description
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
+          title
+        }
+      }
+      featureImageBlob {
+        path
+      }
+      sectionTitle
+    }
+    hero {
+      heroBlurb
+      heroHeader
+      heroHeaderHtml
+    }
+    rolesSection {
+      locals {
+        localsBlurb
+        localsHeader
+      }
+      recommenders {
+        recommendersBlurb
+        recommendersHeader
+      }
+    }
+    title
+  }
+  cities: getCityList(sort: [{ field: "cityName", order: "asc" }]) {
+    total
+    items {
+      cityName
+      icon {
+        _id
+        description
+        path
+        sourceUrl
+      }
+    }
+  }
+}

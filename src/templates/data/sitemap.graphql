@@ -1,0 +1,25 @@
+query {
+  homepage: getHomepage {
+    _updatedAt
+  }
+
+  about: getAboutPage {
+    _updatedAt
+  }
+
+  posts: getBlogPostList {
+    total
+    items {
+      title
+      _updatedAt
+    }
+  }
+
+  cities: getCityList {
+    total
+    items {
+      cityName
+      _updatedAt
+    }
+  }
+}

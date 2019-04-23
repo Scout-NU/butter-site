@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="768px" height="2603px" viewBox="0 0 768 2603" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Homepage Tabletlinework</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Homepage-Tablet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="768" height="2603"></rect>
+        <path d="M510,1294 C523.908067,1256.54043 547.351035,1222.96619 580.328906,1193.27729 C626.649604,1151.57628 687.539969,1128.15051 763,1123" id="Line-2" stroke="#925842" stroke-linecap="square" stroke-dasharray="15"></path>
+        <path d="M437,1294 C456.482847,1247.95629 476.338022,1211.49151 496.565522,1184.60566 C524.908695,1146.93268 603.972087,1093.62 677.949733,1046.72668 C729.830149,1013.84047 761.513572,963.264906 773,895" id="Line" stroke="#925842" stroke-linecap="square" stroke-dasharray="15"></path>
+        <path d="M561.990088,2076.21029 C575.874803,2038.68957 599.278411,2005.06053 632.200912,1975.32317 C678.443838,1933.55409 739.231967,1910.09009 814.565301,1904.93117" id="Line-2-Copy-4" stroke="#925842" stroke-linecap="square" stroke-dasharray="15" transform="translate(688.277694, 1990.570729) rotate(-108.000000) translate(-688.277694, -1990.570729) "></path>
+        <path d="M451.261206,1991.61113 C451.261206,1991.61113 503.735552,2192.83703 634.897382,2235.45409 C733.025057,2267.3377 826.912092,2239.42594 916.558486,2151.7188" id="Line-2-Copy-5" stroke="#925842" stroke-linecap="square" stroke-dasharray="15" transform="translate(683.909846, 2119.907882) rotate(-108.000000) translate(-683.909846, -2119.907882) "></path>
+    </g>
+</svg>

@@ -1,3 +1,7 @@
 # Dependency directories
 node_modules/
 .DS_Store
+.tsgrc
+graphql.config.json
+build/
+**/.DS_Store
