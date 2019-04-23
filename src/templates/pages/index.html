@@ -24,7 +24,7 @@
           <p id ="page-desc" class="butter-p text-charcoal">{{ homepage.hero.heroBlurb }}</p>
           <a
             href="#roles"
-            class="butter-btn butter-btn-light btn-light-hover mt-3"
+            class="butter-btn butter-btn-light mt-3"
           >
             Get involved
         </a>
@@ -121,7 +121,7 @@
                     />
                   </div>
                 </div>
-                <div class="col-lg-3 col-sm-12 mb-3">
+                <div class="col-lg-3 col-sm-12 mb-5">
                   <button class="btn butter-btn-shaded">Say Hey!</button>
                 </div>
               </div>
@@ -172,18 +172,21 @@
       <!-----Cities------->
 
       <div class="section linework" id="section3" role="region">
-        <div class="container cities-blurb cities">
-          <h2 class="butter-h2 text-dark-blue-grey">Cities</h2>
+        <div class="container">
+          <h2 class="butter-h2 text-dark-blue-grey mt-5 mt-lg-0">Cities</h2>
+          <div class="cities-blurb">
           {{ homepage.citiesSection.citiesBlurbHtml | safe }}
+          </div>
           <div class="row cities-list">
             {% for city in cities.items %}
             <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
               <div class="row mt-5">
+              <a href="/cities/{{ city.cityName }}" class="col-6">
               <img
-                class="city-icon col-6"
+                class="city-icon"
                 src="{{ city.icon.path | image }}"
                 alt="{{ city.icon.description }}"
-              />
+              /></a>
               <div class="col-6 py-5">
               <a
                 href="/cities/{{ city.cityName }}"
@@ -196,11 +199,14 @@
             {% endfor %}
             <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
                 <div class="row mt-5">
-                <img
-                  class="city-icon col-6"
-                  src="../assets/Icons/iconsButter-03.svg"
-                  alt="Icon of buildings"
-                />
+                  <a href="{{homepage.citiesSection.yourCityLink}}" class="col-6">
+                      <img
+                      class="city-icon"
+                      src="../assets/Icons/iconsButter-03.svg"
+                      alt="Icon of buildings"
+                    />
+                  </a>
+                
                 <div class="col-6 py-5">
                 <a
                   href="{{homepage.citiesSection.yourCityLink}}"

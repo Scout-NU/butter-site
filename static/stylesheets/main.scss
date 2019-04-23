@@ -68,7 +68,6 @@ section {
 .butter-a {
   &:hover {
     color: $cocoa;
-    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px $cocoa dashed;
   }
@@ -131,6 +130,12 @@ section {
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 5px;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 .butter-btn-light {
@@ -140,6 +145,7 @@ section {
   &:hover {
     background-color: $cocoa;
     color: white;
+    text-decoration: none;
   }
 }
 
@@ -163,9 +169,11 @@ section {
 .butter-btn-shaded {
   color: white;
   background-color: $cocoa;
+  border: none;
   &:hover {
     background: white;
     color: $cocoa;
+    border: none;
   }
 }
 
@@ -416,7 +424,7 @@ section {
 
 #blog-bg-bottom {
   @media screen and (min-width: $break-desktop) {
-    height: 250px;
+    height: 225px;
     background-image: url("../assets/LineWork/spreadUIdesktoplinework_bottom.svg");
   }
 }
@@ -427,7 +435,7 @@ section {
   }
 }
 .city-icon {
-  width: 175px;
+  width: 150px;
 }
 
 .align-bottom {
@@ -438,11 +446,10 @@ section {
   margin-top: 80px;
 }
 
-.cities a {
+.cities-blurb a {
   color: $cocoa;
   &:hover {
     color: $cocoa;
-    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px $cocoa dashed;
   }
@@ -501,7 +508,6 @@ section {
 
 .footer {
   height: auto;
-  margin-top: 30px;
   background-color: $lighter-peach;
 }
 
@@ -653,7 +659,7 @@ section {
   background-repeat: no-repeat;
   background-position: center center;
   &:hover {
-    background-color: rgba(6, 87, 79, 0.7);
+    background-color: rgba(5, 87, 79, 0.7);
     background-blend-mode: multiply;
   }
 }
@@ -808,11 +814,26 @@ ul {
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
   color: $cocoa;
-  font-weight: bold;
   text-decoration: none;
   border-bottom: 1px $cocoa dashed;
 }
 
+.nav-fill {
+  height: 100px;
+}
+
+.navbar-expand-md {
+}
+
 .navbar-toggler {
   border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+#fp-nav.fp-left {
+  @media screen and (max-width: $break-tablet) {
+    display: none;
+  }
 }
