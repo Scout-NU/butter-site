@@ -7438,15 +7438,9 @@ section {
 
 .phone-mockup {
   position: absolute; }
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 960px) {
     .phone-mockup {
       display: none; } }
-  @media screen and (min-width: 540px) and (max-width: 720px) {
-    .phone-mockup {
-      display: none; } }
-  @media screen and (min-width: 720px) and (max-width: 960px) {
-    .phone-mockup {
-      width: 200px; } }
   @media screen and (min-width: 960px) and (max-width: 1200px) {
     .phone-mockup {
       width: 300px; } }
@@ -7454,23 +7448,14 @@ section {
     .phone-mockup {
       width: 300px; } }
 
-@media screen and (min-width: 720px) and (max-width: 960px) {
-  #left-phone {
-    right: 10px; } }
-
 @media screen and (min-width: 960px) and (max-width: 1200px) {
   #left-phone {
     right: 10px; } }
 
 @media screen and (min-width: 1200px) {
   #left-phone {
-    bottom: 160px;
+    bottom: 220px;
     left: 150px; } }
-
-@media screen and (min-width: 720px) and (max-width: 960px) {
-  #right-phone {
-    right: 120px;
-    bottom: 120px; } }
 
 @media screen and (min-width: 960px) and (max-width: 1200px) {
   #right-phone {
@@ -7479,7 +7464,8 @@ section {
 
 @media screen and (min-width: 1200px) {
   #right-phone {
-    right: 110px; } }
+    right: 110px;
+    bottom: 50px; } }
 
 .form-check {
   display: inline-block; }
